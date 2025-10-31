@@ -5124,8 +5124,7 @@
         "y": 140,
         "wires": [
             [
-                "8d7e8fca.098338",
-                "9c162ffe4830e02f"
+                "8d7e8fca.098338"
             ]
         ]
     },
@@ -5389,32 +5388,6 @@
         "wires": [
             [
                 "25da0020.89852"
-            ]
-        ]
-    },
-    {
-        "id": "9c162ffe4830e02f",
-        "type": "ui-template",
-        "z": "4b3ab4b1.cb9d9c",
-        "group": "345735b67be6ba0b",
-        "page": "",
-        "ui": "",
-        "name": "",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "head": "",
-        "format": "<template>\n  <div id=\"rotor-container\" style=\"width:100%; height:100%;\">\n    <svg id=\"rotor-svg\" width=\"100%\" height=\"100%\" viewBox=\"0 0 500 500\">\n      <circle cx=\"250\" cy=\"250\" r=\"230\" stroke=\"black\" stroke-width=\"2\" fill=\"none\"/>\n      <line id=\"beamline\" x1=\"250\" y1=\"250\" x2=\"250\" y2=\"20\"\n        stroke=\"black\" stroke-width=\"2\" stroke-opacity=\"0.5\"/>\n      <polygon id=\"beamwidth\" points=\"250,250 230,20 270,20\"\n        fill=\"green\" fill-opacity=\"0.5\" stroke=\"black\" stroke-width=\"1\" stroke-opacity=\"0.5\"/>\n    </svg>\n  </div>\n</template>\n\n<script>\n(function(scope) {\n  const svg = document.getElementById(\"rotor-svg\");\n\n  function polarToCartesian(cx, cy, radius, angleDeg) {\n    const angleRad = (angleDeg - 90) * Math.PI / 180;\n    return {\n      x: cx + radius * Math.cos(angleRad),\n      y: cy + radius * Math.sin(angleRad)\n    };\n  }\n\n  function updateBeam(angle) {\n    const center = { x: 250, y: 250 };\n    const radius = 230;\n    const beamLine = document.getElementById(\"beamline\");\n    const beamWidth = document.getElementById(\"beamwidth\");\n\n    const tip = polarToCartesian(center.x, center.y, radius, angle);\n    const left = polarToCartesian(center.x, center.y, radius, angle - 25);\n    const right = polarToCartesian(center.x, center.y, radius, angle + 25);\n\n    beamLine.setAttribute(\"x2\", tip.x);\n    beamLine.setAttribute(\"y2\", tip.y);\n    beamWidth.setAttribute(\"points\", `${center.x},${center.y} ${left.x},${left.y} ${right.x},${right.y}`);\n  }\n\n  // Handle click events\n  svg.addEventListener(\"click\", function(event) {\n    const rect = svg.getBoundingClientRect();\n    const x = event.clientX - rect.left;\n    const y = event.clientY - rect.top;\n    const dx = x - 250;\n    const dy = y - 250;\n    let angle = Math.atan2(dy, dx) * 180 / Math.PI;\n    angle = (angle + 360 + 90) % 360;\n\n    updateBeam(angle);\n    scope.send({ payload: Math.round(angle) });\n  });\n\n  // Handle incoming messages from other nodes\nscope.$watch('msg.payload', function(angle) {\nif (typeof angle === 'number') {\nupdateBeam(angle);\n}\n});\n})(scope);\n</script>\n``",
-        "storeOutMessages": true,
-        "passthru": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 480,
-        "y": 540,
-        "wires": [
-            [
-                "e3986155.975ce"
             ]
         ]
     },

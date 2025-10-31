@@ -962,8 +962,8 @@
         "timer": "",
         "winHide": false,
         "oldrc": false,
-        "name": "",
-        "x": 640,
+        "name": "Get CPU Percentage",
+        "x": 320,
         "y": 200,
         "wires": [
             [
@@ -4459,7 +4459,7 @@
         "id": "91951d9bae269686",
         "type": "inject",
         "z": "0c1a690b7daff086",
-        "name": "",
+        "name": "Amp Power every second",
         "props": [
             {
                 "p": "payload"
@@ -4476,7 +4476,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
+        "x": 200,
         "y": 100,
         "wires": [
             [

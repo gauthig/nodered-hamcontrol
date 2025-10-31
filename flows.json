@@ -1040,8 +1040,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 610,
-        "y": 340,
+        "x": 750,
+        "y": 300,
         "wires": [
             []
         ]

@@ -4459,7 +4459,7 @@
         "id": "91951d9bae269686",
         "type": "inject",
         "z": "0c1a690b7daff086",
-        "name": "Amp Power every second",
+        "name": "timestamp",
         "props": [
             {
                 "p": "payload"
@@ -4476,7 +4476,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
+        "x": 150,
         "y": 100,
         "wires": [
             [

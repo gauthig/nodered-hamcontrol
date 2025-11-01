@@ -588,8 +588,8 @@
         ],
         "order": 1,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "visible": true,
+        "disabled": false
     },
     {
         "id": "66e9faf9106a437d",
@@ -692,9 +692,23 @@
         "type": "ui-group",
         "name": "Rotator",
         "page": "6a79fea4971931e2",
-        "width": "4",
+        "width": "2",
         "height": 1,
         "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ac813a277dc276f3",
+        "type": "ui-group",
+        "name": "HF-Auto",
+        "page": "6a79fea4971931e2",
+        "width": "2",
+        "height": 1,
+        "order": 5,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -1164,6 +1178,11 @@
         "label": "Mode",
         "format": "{{payload.HFAUTO.ATU_OPER_MODE[0]}}",
         "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
         "x": 910,
         "y": 340,
         "wires": []
@@ -1191,52 +1210,9 @@
         "y": 628,
         "wires": [
             [
-                "e3068667.82f31",
                 "0dce0add8c589d92"
             ]
         ]
-    },
-    {
-        "id": "e3068667.82f31",
-        "type": "ui_level",
-        "z": "6aa99f42.c1e09",
-        "group": "d2a36faf.12fe2",
-        "order": 9,
-        "width": 6,
-        "height": 1,
-        "name": "ATU PWR MAX",
-        "label": "ATU PWR MAX",
-        "colorHi": "#e60000",
-        "colorWarn": "#ff9900",
-        "colorNormal": "#00b33c",
-        "colorOff": "#595959",
-        "min": 0,
-        "max": "1600",
-        "segWarn": "",
-        "segHigh": "",
-        "unit": "W",
-        "layout": "sh",
-        "channelA": "",
-        "channelB": "",
-        "decimals": 0,
-        "animations": "soft",
-        "shape": 2,
-        "colorschema": "fixed",
-        "textoptions": "default",
-        "colorText": "#eeeeee",
-        "fontLabel": "",
-        "fontValue": "",
-        "fontSmall": "",
-        "colorFromTheme": true,
-        "textAnimations": false,
-        "hideValue": false,
-        "tickmode": "off",
-        "peakmode": false,
-        "property": "payload",
-        "peaktime": 3000,
-        "x": 913,
-        "y": 628,
-        "wires": []
     },
     {
         "id": "dcd1b2c5.c5faf8",
@@ -1261,50 +1237,9 @@
         "y": 740,
         "wires": [
             [
-                "2c41fff7.5ace28",
                 "3616de79e21bbdd6"
             ]
         ]
-    },
-    {
-        "id": "2c41fff7.5ace28",
-        "type": "ui_level",
-        "z": "6aa99f42.c1e09",
-        "group": "d2a36faf.12fe2",
-        "order": 8,
-        "width": 6,
-        "height": 1,
-        "name": "ATU PWR",
-        "label": "ATU PWR",
-        "colorHi": "#e60000",
-        "colorWarn": "#ff9900",
-        "colorNormal": "#00b33c",
-        "colorOff": "#595959",
-        "min": 0,
-        "max": "1600",
-        "segWarn": "",
-        "segHigh": "",
-        "unit": "W",
-        "layout": "sh",
-        "channelA": "",
-        "channelB": "",
-        "decimals": 0,
-        "animations": "soft",
-        "shape": 2,
-        "colorschema": "fixed",
-        "textoptions": "default",
-        "colorText": "#eeeeee",
-        "fontLabel": "",
-        "fontValue": "",
-        "fontSmall": "",
-        "colorFromTheme": true,
-        "textAnimations": false,
-        "hideValue": false,
-        "peakmode": false,
-        "peaktime": 3000,
-        "x": 904,
-        "y": 746,
-        "wires": []
     },
     {
         "id": "c07dbd25.ad85f",
@@ -1329,7 +1264,7 @@
         "y": 817,
         "wires": [
             [
-                "98a3d035.b28a48"
+                "1fd3659ee5284b39"
             ]
         ]
     },
@@ -1363,46 +1298,6 @@
         "layout": "row-spread",
         "x": 910,
         "y": 500,
-        "wires": []
-    },
-    {
-        "id": "98a3d035.b28a48",
-        "type": "ui_level",
-        "z": "6aa99f42.c1e09",
-        "group": "d2a36faf.12fe2",
-        "order": 7,
-        "width": 6,
-        "height": 1,
-        "name": "SWR",
-        "label": "SWR",
-        "colorHi": "#e60000",
-        "colorWarn": "#ff9900",
-        "colorNormal": "#00b33c",
-        "colorOff": "#595959",
-        "min": 0,
-        "max": "5",
-        "segWarn": "",
-        "segHigh": "",
-        "unit": "",
-        "layout": "sh",
-        "channelA": "",
-        "channelB": "",
-        "decimals": "1",
-        "animations": "soft",
-        "shape": 2,
-        "colorschema": "fixed",
-        "textoptions": "default",
-        "colorText": "#eeeeee",
-        "fontLabel": "",
-        "fontValue": "",
-        "fontSmall": "",
-        "colorFromTheme": true,
-        "textAnimations": false,
-        "hideValue": false,
-        "peakmode": false,
-        "peaktime": 3000,
-        "x": 890,
-        "y": 820,
         "wires": []
     },
     {
@@ -2800,8 +2695,8 @@
         "type": "ui-gauge",
         "z": "6aa99f42.c1e09",
         "name": "Max Power",
-        "group": "66e9faf9106a437d",
-        "order": 5,
+        "group": "ac813a277dc276f3",
+        "order": 2,
         "value": "payload",
         "valueType": "msg",
         "width": 2,
@@ -2854,8 +2749,8 @@
         "type": "ui-gauge-linear",
         "z": "6aa99f42.c1e09",
         "name": "Watts",
-        "group": "66e9faf9106a437d",
-        "order": 2,
+        "group": "ac813a277dc276f3",
+        "order": 3,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -2959,7 +2854,7 @@
         "decimals": "0",
         "zeros": true,
         "myclass": "",
-        "x": 1150,
+        "x": 890,
         "y": 740,
         "wires": []
     },
@@ -2968,8 +2863,8 @@
         "type": "ui-gauge-linear",
         "z": "6aa99f42.c1e09",
         "name": "Peak Power",
-        "group": "66e9faf9106a437d",
-        "order": 3,
+        "group": "ac813a277dc276f3",
+        "order": 1,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -3075,6 +2970,120 @@
         "myclass": "",
         "x": 1150,
         "y": 500,
+        "wires": []
+    },
+    {
+        "id": "1fd3659ee5284b39",
+        "type": "ui-gauge-linear",
+        "z": "6aa99f42.c1e09",
+        "name": "SWR",
+        "group": "ac813a277dc276f3",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "min": 0,
+        "max": "5",
+        "ticks": [],
+        "colors": [
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            }
+        ],
+        "zeroCrossColors": [
+            "#ff4c16",
+            "#00e300"
+        ],
+        "mode": "default",
+        "bar": "segmented",
+        "minLabel": "",
+        "maxLabel": "",
+        "label": "Gauge Linear",
+        "icon": "",
+        "unit": "",
+        "dim": 0.2,
+        "property": "payload",
+        "decimals": "0",
+        "zeros": true,
+        "myclass": "",
+        "x": 890,
+        "y": 820,
         "wires": []
     },
     {
@@ -4232,7 +4241,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"group\":{\"hide\":[\"Shack-Control_LA-1K\"]}}",
+                "to": "{\"group\":{\"hide\":[\"Palstar LA-1K Amp\"]}}",
                 "tot": "json"
             }
         ],
@@ -4245,20 +4254,8 @@
         "y": 80,
         "wires": [
             [
-                "a85a6733f4b61655"
+                "c7194fc483948114"
             ]
-        ]
-    },
-    {
-        "id": "a85a6733f4b61655",
-        "type": "ui_ui_control",
-        "z": "db90effc.848d88",
-        "name": "",
-        "events": "all",
-        "x": 1160,
-        "y": 100,
-        "wires": [
-            []
         ]
     },
     {
@@ -4271,7 +4268,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"group\":{\"show\":[\"Shack-Control_LA-1K\"]}}",
+                "to": "{\"group\":{\"show\":[\"Palstar LA-1K Amp\"]}}",
                 "tot": "json"
             }
         ],
@@ -4284,7 +4281,7 @@
         "y": 120,
         "wires": [
             [
-                "a85a6733f4b61655"
+                "c7194fc483948114"
             ]
         ]
     },
@@ -4307,7 +4304,7 @@
         "z": "db90effc.848d88",
         "name": "AmpTemp",
         "group": "66e9faf9106a437d",
-        "order": 4,
+        "order": 2,
         "value": "payload",
         "valueType": "msg",
         "width": "2",
@@ -4421,6 +4418,19 @@
             [
                 "7d46f5b1.b3e2bc"
             ]
+        ]
+    },
+    {
+        "id": "c7194fc483948114",
+        "type": "ui-control",
+        "z": "db90effc.848d88",
+        "name": "Hide-Unhide",
+        "ui": "549e4fdcf9161fde",
+        "events": "all",
+        "x": 1130,
+        "y": 100,
+        "wires": [
+            []
         ]
     },
     {
@@ -5065,6 +5075,7 @@
         "id": "8d7e8fca.098338",
         "type": "ui_svg_graphics",
         "z": "4b3ab4b1.cb9d9c",
+        "d": true,
         "group": "fb236873.303e38",
         "order": 5,
         "width": 0,
@@ -5112,6 +5123,7 @@
         "id": "a31d289c.db976",
         "type": "function",
         "z": "4b3ab4b1.cb9d9c",
+        "d": true,
         "name": "Draw Beam",
         "func": "/**\n * Calculate x and y in circle's circumference\n * @param {Object} input - The input parameters\n * @param {number} input.radius - The circle's radius\n * @param {number} input.angle - The angle in degrees\n * @param {number} input.cx - The circle's origin x\n * @param {number} input.cy - The circle's origin y\n * @returns {Array[number,number]} The calculated x and y\n */\nfunction pointsOnCircle({ radius, angle, cx, cy }){\n  angle = angle * ( Math.PI / 180 ); // Convert from Degrees to Radians\n  const x = cx + radius * Math.cos(angle);\n  const y = cy + radius * Math.sin(angle);\n  return [ x, y ];\n}\n\n\nvar angle = msg.payload - 90; // Convert angle to North as 0\nvar coord = pointsOnCircle({ radius: 230, angle: angle, cx: 250, cy: 250 });\nvar x2 = coord[0].toString();\nvar y2 = coord[1].toString();\n\ncoord = pointsOnCircle({ radius: 230, angle: angle-25, cx: 250, cy: 250 });\nvar beamx2a = coord[0].toString();\nvar beamy2a = coord[1].toString();\ncoord = pointsOnCircle({ radius: 230, angle: angle+25, cx: 250, cy: 250 });\nvar beamx2b = coord[0].toString();\nvar beamy2b = coord[1].toString();\n\n\nmsg.payload = [\n    {\n        \"command\": \"remove_element\",\n        \"elementId\": \"beamline\"\n        \n    },\n    {\n        \"command\": \"remove_element\",\n        \"elementId\": \"beamwidth\"\n        \n    },\n    {\n        \"command\": \"add_element\",\n        \"elementType\": \"polygon\",\n        \"elementId\": \"beamwidth\",\n        \"elementAttributes\": {\n            \"points\": \"250,250 \" + beamx2a + \",\" + beamy2a + \" \" + beamx2b + \",\" + beamy2b\n        },\n        \"elementStyleAttributes\": {\n            \"fill\": \"green;fill-opacity:0.5\",\n            \"stroke\": \"black;stroke-width:1px;stroke-opacity:0.5\"\n        },\n        \"textContent\": \"my content\"\n    },\n    {\n        \"command\": \"add_element\",\n        \"elementType\": \"line\",\n        \"elementId\": \"beamline\",\n        \"elementAttributes\": {\n            \"x1\": \"250\",\n            \"y1\": \"250\",\n            \"x2\": x2,\n            \"y2\": y2\n        },\n        \"elementStyleAttributes\": {\n            \"fill\": \"none\",\n            \"stroke\": \"black;stroke-width:2px;stroke-opacity:0.5\"\n        },\n        \"textContent\": \"Beam antenna\"\n    }\n]\nreturn msg;",
         "outputs": 1,
@@ -5132,6 +5144,7 @@
         "id": "e3986155.975ce",
         "type": "function",
         "z": "4b3ab4b1.cb9d9c",
+        "d": true,
         "name": "point to angle",
         "func": "function pointToAngle(cx, cy, ex, ey) {\n  var dy = ey - cy;\n  var dx = ex - cx;\n  var theta = Math.atan2(dy, dx); // range (-PI, PI]\n  theta *= 180 / Math.PI; // rads to degs, range (-180, 180]\n  if (theta < 0) theta = 360 + theta; // range [0, 360)\n  return theta;\n}\nvar angle = \"\";\nif (msg.elementId == \"image\" && msg.event.type == \"click\"){\n    angle = pointToAngle(250, 250, msg.event.svgX, msg.event.svgY);\n    angle = angle+90;\n    \n}\n\nvar returnangle = { payload: Math.round(angle)};\n\nreturn returnangle;",
         "outputs": 1,
@@ -5326,7 +5339,7 @@
         "group": "345735b67be6ba0b",
         "name": "Azimuth",
         "label": "Azimuth",
-        "order": 3,
+        "order": 2,
         "width": 0,
         "height": 0,
         "topic": "topic",
@@ -5359,7 +5372,7 @@
         "group": "345735b67be6ba0b",
         "name": "Stop",
         "label": "Stop",
-        "order": 2,
+        "order": 1,
         "width": "1",
         "height": "1",
         "emulateClick": false,

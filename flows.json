@@ -586,7 +586,7 @@
                 "cols": "12"
             }
         ],
-        "order": 1,
+        "order": 2,
         "className": "",
         "visible": true,
         "disabled": false
@@ -668,7 +668,7 @@
                 "cols": "12"
             }
         ],
-        "order": 2,
+        "order": 3,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -709,6 +709,56 @@
         "width": "2",
         "height": 1,
         "order": 5,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "0a7573c83fd8b3b1",
+        "type": "ui-page",
+        "name": "System",
+        "ui": "549e4fdcf9161fde",
+        "path": "/system",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "788f1988c2c65368",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "c0e4462d93279def",
+        "type": "ui-group",
+        "name": "System Stats",
+        "page": "0a7573c83fd8b3b1",
+        "width": "3",
+        "height": 1,
+        "order": 1,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -981,7 +1031,7 @@
         "y": 200,
         "wires": [
             [
-                "ec247a03a3751bf2"
+                "cb054b5573cb41d9"
             ],
             [],
             []
@@ -1017,45 +1067,63 @@
         ]
     },
     {
-        "id": "ec247a03a3751bf2",
-        "type": "ui_chart",
+        "id": "cb054b5573cb41d9",
+        "type": "ui-chart",
         "z": "874993c266b288b8",
-        "name": "",
-        "group": "d0a6c77c545464e0",
-        "order": 17,
-        "width": 0,
-        "height": 0,
-        "label": "NodeRed CPU%",
+        "group": "c0e4462d93279def",
+        "name": "CPU Chart",
+        "label": "chart",
+        "order": 1,
         "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
         "ymin": "0",
         "ymax": "100",
-        "removeOlder": "5",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
         "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
         "colors": [
-            "#1f77b4",
-            "#aec7e8",
+            "#0095ff",
+            "#ff0000",
             "#ff7f0e",
             "#2ca02c",
-            "#98df8a",
+            "#a347e1",
             "#d62728",
             "#ff9896",
             "#9467bd",
             "#c5b0d5"
         ],
-        "outputs": 1,
-        "useDifferentColor": false,
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
         "className": "",
-        "x": 750,
-        "y": 300,
+        "interpolation": "linear",
+        "x": 610,
+        "y": 160,
         "wires": [
             []
         ]
@@ -1088,8 +1156,11 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
-        "x": 450,
+        "complete": "payload.HFAUTO.ATU_OPER_MODE[0]",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
         "y": 520,
         "wires": []
     },
@@ -1126,16 +1197,15 @@
                 "c07dbd25.ad85f",
                 "899471da.01db4",
                 "c2d41dc7.0d4a08",
-                "d2574879.ab82",
                 "d3f7c171.6c91d",
                 "a7e64c6d.259ee",
-                "32429027.2b293",
-                "1d7fcfdb.e6eb48",
-                "477af596.3b112c",
                 "d6a53060.82303",
                 "72d1bc90.d198fc",
                 "e5174c55.9befe8",
-                "54036e6f.943ad8"
+                "54036e6f.943ad8",
+                "de104be27d6fcf35",
+                "c1f5c51601664052",
+                "1922b234.3d88d6"
             ]
         ]
     },
@@ -1279,6 +1349,11 @@
         "label": "Ant Name",
         "format": "{{payload.HFAUTO.ATU_ANT_NAME[0]}}",
         "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
         "x": 920,
         "y": 420,
         "wires": []
@@ -1314,133 +1389,6 @@
         "x": 1333,
         "y": 1332,
         "wires": []
-    },
-    {
-        "id": "d87ab275.3ee72",
-        "type": "ui_button",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "group": "8b8f9b230af6eb13",
-        "order": 6,
-        "width": 6,
-        "height": 1,
-        "passthru": false,
-        "label": "<font size = 5>Bypass",
-        "tooltip": "",
-        "color": "{{color}}",
-        "bgcolor": "{{background}}",
-        "className": "",
-        "icon": "",
-        "payload": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 1109,
-        "y": 1042,
-        "wires": [
-            [
-                "a908fd67.bcfa98"
-            ]
-        ]
-    },
-    {
-        "id": "6b520560.65d224",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "yellow",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "black",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 860,
-        "y": 1032,
-        "wires": [
-            [
-                "d87ab275.3ee72"
-            ]
-        ]
-    },
-    {
-        "id": "4fc6f887.4d4c38",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "green",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "white",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 840,
-        "y": 960,
-        "wires": [
-            [
-                "d87ab275.3ee72"
-            ]
-        ]
-    },
-    {
-        "id": "d2574879.ab82",
-        "type": "switch",
-        "z": "6aa99f42.c1e09",
-        "name": "Mode = Bypass",
-        "property": "tuner.HFAUTO.ATU_OPER_MODE[0]",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "BYPASS",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 582,
-        "y": 1003,
-        "wires": [
-            [
-                "4fc6f887.4d4c38"
-            ],
-            [
-                "6b520560.65d224"
-            ]
-        ]
     },
     {
         "id": "f8f8fc64.931168",
@@ -1697,360 +1645,6 @@
         ]
     },
     {
-        "id": "883cdc9.0f8e22",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "yellow",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "black",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 765,
-        "y": 1681,
-        "wires": [
-            [
-                "6cdcf7c57b2a52dc"
-            ]
-        ]
-    },
-    {
-        "id": "668f6e30.a16138",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "green",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "white",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 769,
-        "y": 1594,
-        "wires": [
-            [
-                "6cdcf7c57b2a52dc"
-            ]
-        ]
-    },
-    {
-        "id": "32429027.2b293",
-        "type": "switch",
-        "z": "6aa99f42.c1e09",
-        "name": "Antenna = 1",
-        "property": "tuner.HFAUTO.ATU_ANT_NR[0]",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "1",
-                "vt": "num"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 551,
-        "y": 1645,
-        "wires": [
-            [
-                "668f6e30.a16138"
-            ],
-            [
-                "883cdc9.0f8e22"
-            ]
-        ]
-    },
-    {
-        "id": "e29721cf.a7837",
-        "type": "ui_button",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "group": "8b8f9b230af6eb13",
-        "order": 2,
-        "width": 2,
-        "height": 1,
-        "passthru": false,
-        "label": "<font size = 4>EFHW",
-        "tooltip": "",
-        "color": "{{color}}",
-        "bgcolor": "{{background}}",
-        "className": "",
-        "icon": "",
-        "payload": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 1127,
-        "y": 1844,
-        "wires": [
-            [
-                "a908fd67.bcfa98",
-                "084f7ed657fa62e7"
-            ]
-        ]
-    },
-    {
-        "id": "ab07f250.1644b",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "yellow",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "black",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 808,
-        "y": 1891,
-        "wires": [
-            [
-                "e29721cf.a7837"
-            ]
-        ]
-    },
-    {
-        "id": "b0dfa1c3.3a3f58",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "green",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "white",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 812,
-        "y": 1804,
-        "wires": [
-            [
-                "e29721cf.a7837"
-            ]
-        ]
-    },
-    {
-        "id": "1d7fcfdb.e6eb48",
-        "type": "switch",
-        "z": "6aa99f42.c1e09",
-        "name": "Antenna = 2",
-        "property": "tuner.HFAUTO.ATU_ANT_NR[0]",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "2",
-                "vt": "num"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 557,
-        "y": 1852,
-        "wires": [
-            [
-                "b0dfa1c3.3a3f58"
-            ],
-            [
-                "ab07f250.1644b"
-            ]
-        ]
-    },
-    {
-        "id": "314ea0f3.015228",
-        "type": "ui_button",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "group": "8b8f9b230af6eb13",
-        "order": 3,
-        "width": 2,
-        "height": 1,
-        "passthru": false,
-        "label": "<font size = 5>Ant 3",
-        "tooltip": "",
-        "color": "{{color}}",
-        "bgcolor": "{{background}}",
-        "className": "",
-        "icon": "",
-        "payload": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 1217,
-        "y": 2049,
-        "wires": [
-            [
-                "4503d53dc280a1b0"
-            ]
-        ]
-    },
-    {
-        "id": "dc8270e4.ec3c58",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "yellow",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "black",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 839,
-        "y": 2097,
-        "wires": [
-            [
-                "314ea0f3.015228"
-            ]
-        ]
-    },
-    {
-        "id": "efcf46db.6ec868",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "green",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "white",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 836,
-        "y": 2023,
-        "wires": [
-            [
-                "314ea0f3.015228"
-            ]
-        ]
-    },
-    {
-        "id": "477af596.3b112c",
-        "type": "switch",
-        "z": "6aa99f42.c1e09",
-        "name": "Antenna = 3",
-        "property": "tuner.HFAUTO.ATU_ANT_NR[0]",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "3",
-                "vt": "num"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 542,
-        "y": 2064,
-        "wires": [
-            [
-                "efcf46db.6ec868"
-            ],
-            [
-                "dc8270e4.ec3c58"
-            ]
-        ]
-    },
-    {
         "id": "d6a53060.82303",
         "type": "change",
         "z": "6aa99f42.c1e09",
@@ -2076,8 +1670,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
-        "y": 2220,
+        "x": 450,
+        "y": 1620,
         "wires": [
             [
                 "af79ae54.674a88"
@@ -2110,8 +1704,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 603,
-        "y": 2303,
+        "x": 543,
+        "y": 1703,
         "wires": [
             [
                 "af79ae54.674a88"
@@ -2134,8 +1728,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 435,
-        "y": 2304,
+        "x": 375,
+        "y": 1704,
         "wires": [
             [
                 "9a9645ae.fe4b7"
@@ -2150,8 +1744,8 @@
         "topicA": "first",
         "topicB": "second",
         "name": "C Delta",
-        "x": 724,
-        "y": 2249,
+        "x": 664,
+        "y": 1649,
         "wires": [
             [
                 "e55f3836.88f2d8"
@@ -2184,8 +1778,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 2380,
+        "x": 490,
+        "y": 1780,
         "wires": [
             [
                 "8781856a.3f2c5"
@@ -2218,8 +1812,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 547,
-        "y": 2498,
+        "x": 487,
+        "y": 1898,
         "wires": [
             [
                 "8781856a.3f2c5"
@@ -2242,8 +1836,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 390,
-        "y": 2500,
+        "x": 330,
+        "y": 1900,
         "wires": [
             [
                 "76d4783e.c1c2a8"
@@ -2258,8 +1852,8 @@
         "topicA": "first",
         "topicB": "second",
         "name": "L Delta",
-        "x": 722,
-        "y": 2435,
+        "x": 662,
+        "y": 1835,
         "wires": [
             [
                 "de29d40f.c9c85"
@@ -2272,8 +1866,8 @@
         "z": "6aa99f42.c1e09",
         "name": "Tuning LED",
         "info": "",
-        "x": 830,
-        "y": 2180,
+        "x": 770,
+        "y": 1580,
         "wires": []
     },
     {
@@ -2296,8 +1890,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 881,
-        "y": 2434,
+        "x": 821,
+        "y": 1834,
         "wires": [
             [
                 "cfdf44b9.81572"
@@ -2326,8 +1920,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1059,
-        "y": 2417,
+        "x": 999,
+        "y": 1817,
         "wires": [
             [
                 "ffba0742.95a128"
@@ -2353,8 +1947,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
-        "y": 2463,
+        "x": 1000,
+        "y": 1863,
         "wires": [
             [
                 "ffba0742.95a128"
@@ -2388,8 +1982,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "L Tuning LED",
-        "x": 1274,
-        "y": 2431,
+        "x": 1214,
+        "y": 1831,
         "wires": []
     },
     {
@@ -2412,8 +2006,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 886,
-        "y": 2251,
+        "x": 826,
+        "y": 1651,
         "wires": [
             [
                 "887de1a8.8943c8"
@@ -2442,8 +2036,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1064,
-        "y": 2234,
+        "x": 1004,
+        "y": 1634,
         "wires": [
             [
                 "deeaa805.80fee"
@@ -2469,8 +2063,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1065,
-        "y": 2280,
+        "x": 1005,
+        "y": 1680,
         "wires": [
             [
                 "deeaa805.80fee"
@@ -2504,190 +2098,9 @@
         "shape": "circle",
         "showGlow": true,
         "name": "C Tuning LED",
-        "x": 1280,
-        "y": 2260,
+        "x": 1220,
+        "y": 1660,
         "wires": []
-    },
-    {
-        "id": "f08da520009c945a",
-        "type": "delay",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1032,
-        "y": 1704,
-        "wires": [
-            [
-                "e854c05cfc4c2050"
-            ]
-        ]
-    },
-    {
-        "id": "e854c05cfc4c2050",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1212,
-        "y": 1704,
-        "wires": [
-            [
-                "a908fd67.bcfa98"
-            ]
-        ]
-    },
-    {
-        "id": "4503d53dc280a1b0",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1452,
-        "y": 2044,
-        "wires": [
-            [
-                "a908fd67.bcfa98"
-            ]
-        ]
-    },
-    {
-        "id": "084f7ed657fa62e7",
-        "type": "delay",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1052,
-        "y": 1904,
-        "wires": [
-            [
-                "589c1c1ac4c4686f"
-            ]
-        ]
-    },
-    {
-        "id": "589c1c1ac4c4686f",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1232,
-        "y": 1904,
-        "wires": [
-            [
-                "a908fd67.bcfa98"
-            ]
-        ]
-    },
-    {
-        "id": "56739cd1724ef2cd",
-        "type": "ui_template",
-        "z": "6aa99f42.c1e09",
-        "group": "d2a36faf.12fe2",
-        "name": "HF-Auto",
-        "order": 1,
-        "width": 6,
-        "height": 1,
-        "format": "<md-button class=\"vibrate filled touched bigfont rounded\"\n    style=\"background-image :linear-gradient(135deg, black, blue); color:#fef1e1\"\n    ng-click=\"send({payload: 'Hello World'})\">\n    Palstar HF-Auto Tuner<br/>\n</md-button>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 260,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6cdcf7c57b2a52dc",
-        "type": "ui_button",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "group": "8b8f9b230af6eb13",
-        "order": 1,
-        "width": 2,
-        "height": 1,
-        "passthru": false,
-        "label": "<font size = 4>Hex Beam",
-        "tooltip": "",
-        "color": "{{color}}",
-        "bgcolor": "{{background}}",
-        "className": "",
-        "icon": "",
-        "payload": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 1062,
-        "y": 1584,
-        "wires": [
-            [
-                "a908fd67.bcfa98",
-                "f08da520009c945a"
-            ]
-        ]
     },
     {
         "id": "0dce0add8c589d92",
@@ -2695,7 +2108,7 @@
         "z": "6aa99f42.c1e09",
         "name": "Peak Power",
         "group": "ac813a277dc276f3",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -2819,8 +2232,7 @@
         "y": 660,
         "wires": [
             [
-                "76de83fb.8325bc",
-                "1922b234.3d88d6"
+                "76de83fb.8325bc"
             ]
         ]
     },
@@ -2830,7 +2242,7 @@
         "z": "6aa99f42.c1e09",
         "name": "SWR",
         "group": "ac813a277dc276f3",
-        "order": 3,
+        "order": 4,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -2944,7 +2356,7 @@
         "z": "6aa99f42.c1e09",
         "name": "TX Watts",
         "group": "ac813a277dc276f3",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -3051,6 +2463,275 @@
         "x": 880,
         "y": 740,
         "wires": []
+    },
+    {
+        "id": "de104be27d6fcf35",
+        "type": "function",
+        "z": "6aa99f42.c1e09",
+        "name": "Mode Config",
+        "func": "var mode = msg.payload.HFAUTO.ATU_OPER_MODE[0]\n//var mode = global.get(\"tuner.HFAUTO.ATU_OPER_MODE[0]\") payload.HFAUTO.ATU_OPER_MODE[0]\n\nif (mode == \"BYPASS\") {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>'\n}\n\nelse if (mode == \"AUTO\") {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>'\n}\n\nelse if (mode == \"MANUAL\") {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>MANUAL</CMD></EXT_CMD>'\n}\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1120,
+        "wires": [
+            [
+                "1fce4196c0c55488"
+            ]
+        ]
+    },
+    {
+        "id": "9f7d73a86f8576b2",
+        "type": "ui-radio-group",
+        "z": "6aa99f42.c1e09",
+        "group": "ac813a277dc276f3",
+        "name": "Ant Selection",
+        "label": "Ant Selection",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "columns": 1,
+        "passthru": false,
+        "options": [
+            {
+                "label": "HexBeam",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>",
+                "type": "str"
+            },
+            {
+                "label": "EFHW",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
+                "type": "str"
+            },
+            {
+                "label": "ZeroFive",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 730,
+        "y": 940,
+        "wires": [
+            [
+                "0a868cebee90b619"
+            ]
+        ]
+    },
+    {
+        "id": "c1f5c51601664052",
+        "type": "function",
+        "z": "6aa99f42.c1e09",
+        "name": "Get Ant",
+        "func": "\nvar ant = global.get(\"tuner.HFAUTO.ATU_ANT_NR[0]\")\n\nif(ant == 1){\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>'\n}\n\nelse if (ant == 2) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>'\n}\n\nelse if (ant == 3) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>'\n}\n\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 940,
+        "wires": [
+            [
+                "9f7d73a86f8576b2"
+            ]
+        ]
+    },
+    {
+        "id": "0a868cebee90b619",
+        "type": "switch",
+        "z": "6aa99f42.c1e09",
+        "name": "Ant Control",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 910,
+        "y": 940,
+        "wires": [
+            [
+                "a908fd67.bcfa98",
+                "a019a2910581f218"
+            ],
+            [
+                "a908fd67.bcfa98",
+                "50e3cb60a5cc4428"
+            ],
+            [
+                "a908fd67.bcfa98"
+            ]
+        ]
+    },
+    {
+        "id": "a019a2910581f218",
+        "type": "delay",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1100,
+        "y": 920,
+        "wires": [
+            [
+                "3ca910667e902369"
+            ]
+        ]
+    },
+    {
+        "id": "3ca910667e902369",
+        "type": "change",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1280,
+        "y": 920,
+        "wires": [
+            [
+                "a908fd67.bcfa98"
+            ]
+        ]
+    },
+    {
+        "id": "50e3cb60a5cc4428",
+        "type": "delay",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1100,
+        "y": 960,
+        "wires": [
+            [
+                "43f27492c8999b1d"
+            ]
+        ]
+    },
+    {
+        "id": "43f27492c8999b1d",
+        "type": "change",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1280,
+        "y": 960,
+        "wires": [
+            [
+                "a908fd67.bcfa98"
+            ]
+        ]
+    },
+    {
+        "id": "1fce4196c0c55488",
+        "type": "ui-radio-group",
+        "z": "6aa99f42.c1e09",
+        "group": "ac813a277dc276f3",
+        "name": "Mode",
+        "label": "Tuner Mode",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "columns": 1,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Bypass",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>",
+                "type": "str"
+            },
+            {
+                "label": "Auto",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>",
+                "type": "str"
+            },
+            {
+                "label": "Manual",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>MANUAL</CMD></EXT_CMD>",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 770,
+        "y": 1120,
+        "wires": [
+            [
+                "a908fd67.bcfa98"
+            ]
+        ]
     },
     {
         "id": "1a9dcdb1.cbec12",
@@ -3571,7 +3252,7 @@
             "6a997dd0.80a73c",
             "6a333069.8531f8",
             "2705c395.dbbfdc",
-            "5a56913e.ac1e"
+            "6e695155564ee982"
         ],
         "x": 355,
         "y": 240,
@@ -3903,27 +3584,6 @@
         ]
     },
     {
-        "id": "61fb6624e16217bb",
-        "type": "ui_template",
-        "z": "db90effc.848d88",
-        "group": "fa45237.c045de",
-        "name": "LA-1K",
-        "order": 1,
-        "width": 6,
-        "height": 1,
-        "format": "<md-button class=\"vibrate filled touched bigfont rounded\"\n    style=\"background-image :linear-gradient(135deg, black, blue); color:#fef1e1\"\n    ng-click=\"send({payload: 'Hello World'})\">\n    Palstar LA-1K<br/>\n</md-button>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 650,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "b14a15b7597391b4",
         "type": "change",
         "z": "db90effc.848d88",
@@ -4136,7 +3796,7 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 10,
+        "order": 8,
         "width": 2,
         "height": "1",
         "name": "Amp Status",
@@ -4298,7 +3958,7 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 11,
+        "order": 9,
         "width": 2,
         "height": "1",
         "name": "Band",
@@ -4322,7 +3982,7 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 9,
+        "order": 7,
         "width": 2,
         "height": "1",
         "name": "Key",
@@ -4407,7 +4067,7 @@
         "group": "66e9faf9106a437d",
         "name": "Ant 2 Button",
         "label": "ANT->OPEN",
-        "order": 8,
+        "order": 10,
         "width": "2",
         "height": "1",
         "emulateClick": false,
@@ -4466,7 +4126,7 @@
         "group": "66e9faf9106a437d",
         "name": "Ant 3 Button",
         "label": "ANT->OPEN",
-        "order": 7,
+        "order": 11,
         "width": "2",
         "height": "1",
         "emulateClick": false,
@@ -5374,27 +5034,6 @@
             [
                 "ad1725ed.315ba8"
             ]
-        ]
-    },
-    {
-        "id": "9482381aeb30cdc6",
-        "type": "ui_template",
-        "z": "4b3ab4b1.cb9d9c",
-        "group": "fb236873.303e38",
-        "name": "Yaesu G-800DX Rotator",
-        "order": 1,
-        "width": 6,
-        "height": 1,
-        "format": "<md-button class=\"vibrate filled touched bigfont rounded\"\n    style=\"background-image :linear-gradient(135deg, black, blue); color:#fef1e1\"\n    ng-click=\"send({payload: 'Hello World'})\">\n    Yaesu G-800DX Rotator<br/>\n</md-button>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 490,
-        "y": 40,
-        "wires": [
-            []
         ]
     },
     {

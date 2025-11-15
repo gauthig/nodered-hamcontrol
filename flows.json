@@ -244,29 +244,6 @@
         "h": 429.7777099609375
     },
     {
-        "id": "3cf6a789e6a1831f",
-        "type": "group",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "Presets",
-        "style": {
-            "fill": "#bfdbef",
-            "label": true
-        },
-        "nodes": [
-            "70d17426e61b4079",
-            "207d94ee56f7e1b2",
-            "e9878e43d24f3310",
-            "a56b8a51c41b7004",
-            "ebb919c7c2236035",
-            "b99b8dfea81a6973",
-            "94203104d8b8a2f8"
-        ],
-        "x": 154,
-        "y": 399,
-        "w": 322,
-        "h": 282
-    },
-    {
         "id": "33e6f0db7d025118",
         "type": "flexradio-radio",
         "name": "",
@@ -5133,8 +5110,8 @@
         "outport": "",
         "base64": false,
         "multicast": "false",
-        "x": 780,
-        "y": 320,
+        "x": 660,
+        "y": 300,
         "wires": []
     },
     {
@@ -5149,7 +5126,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
+        "x": 400,
         "y": 220,
         "wires": [
             [
@@ -5168,7 +5145,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 540,
+        "x": 400,
         "y": 300,
         "wires": [
             [
@@ -5203,8 +5180,8 @@
         "topic": "",
         "payload": "<PST>AZ?</PST>",
         "payloadType": "str",
-        "x": 280,
-        "y": 340,
+        "x": 320,
+        "y": 420,
         "wires": [
             [
                 "ad1725ed.315ba8"
@@ -5295,278 +5272,103 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 260,
+        "x": 680,
+        "y": 220,
         "wires": []
     },
     {
-        "id": "70d17426e61b4079",
-        "type": "ui-button",
+        "id": "a65973ee735832b2",
+        "type": "ui-dropdown",
         "z": "4b3ab4b1.cb9d9c",
-        "g": "3cf6a789e6a1831f",
         "group": "345735b67be6ba0b",
-        "name": "Middle of US",
-        "label": "Middle of US",
-        "order": 3,
-        "width": "2",
-        "height": "1",
-        "emulateClick": false,
+        "name": "Presets",
+        "label": "Preset",
         "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "<PST><AZIMUTH>71</AZIMUTH></PST>",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 250,
-        "y": 440,
-        "wires": [
-            [
-                "207d94ee56f7e1b2"
-            ]
-        ]
-    },
-    {
-        "id": "207d94ee56f7e1b2",
-        "type": "link out",
-        "z": "4b3ab4b1.cb9d9c",
-        "g": "3cf6a789e6a1831f",
-        "name": "PSTRotator out",
-        "mode": "link",
-        "links": [
-            "160ae8209c9d3ef2"
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [
+            {
+                "label": "Middle of US",
+                "value": "71",
+                "type": "str"
+            },
+            {
+                "label": "South America",
+                "value": "117",
+                "type": "str"
+            },
+            {
+                "label": "Caribbean",
+                "value": "100",
+                "type": "str"
+            },
+            {
+                "label": "Australia",
+                "value": "260",
+                "type": "str"
+            },
+            {
+                "label": "Malaysia",
+                "value": "314",
+                "type": "str"
+            },
+            {
+                "label": "Moscow",
+                "value": "14",
+                "type": "str"
+            },
+            {
+                "label": "Vancover",
+                "value": "352",
+                "type": "str"
+            },
+            {
+                "label": "Winnipeg",
+                "value": "35",
+                "type": "str"
+            },
+            {
+                "label": "NY/Toronto",
+                "value": "66",
+                "type": "str"
+            }
         ],
-        "x": 435,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "160ae8209c9d3ef2",
-        "type": "link in",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "PSTRotator",
-        "links": [
-            "207d94ee56f7e1b2"
-        ],
-        "x": 725,
-        "y": 400,
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": true,
+        "msgTrigger": "onChange",
+        "x": 200,
+        "y": 360,
         "wires": [
             [
-                "ad1725ed.315ba8",
-                "a1376e0d48aae56f"
+                "f8b3008f2ad3d74d"
             ]
         ]
     },
     {
-        "id": "e9878e43d24f3310",
-        "type": "ui-button",
+        "id": "f8b3008f2ad3d74d",
+        "type": "function",
         "z": "4b3ab4b1.cb9d9c",
-        "g": "3cf6a789e6a1831f",
-        "group": "345735b67be6ba0b",
-        "name": "South America",
-        "label": "South America",
-        "order": 4,
-        "width": "2",
-        "height": "1",
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "<PST><AZIMUTH>117</AZIMUTH></PST>",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 260,
-        "y": 480,
+        "name": "AZ Input",
+        "func": "msg.payload = \"<PST><AZIMUTH>\"+msg.payload+\"</AZIMUTH></PST>\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 360,
         "wires": [
             [
-                "207d94ee56f7e1b2"
-            ]
-        ]
-    },
-    {
-        "id": "a56b8a51c41b7004",
-        "type": "ui-button",
-        "z": "4b3ab4b1.cb9d9c",
-        "g": "3cf6a789e6a1831f",
-        "group": "345735b67be6ba0b",
-        "name": "Caribbean",
-        "label": "Caribbean",
-        "order": 5,
-        "width": "2",
-        "height": "1",
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "<PST><AZIMUTH>100</AZIMUTH></PST>",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 250,
-        "y": 520,
-        "wires": [
-            [
-                "207d94ee56f7e1b2"
-            ]
-        ]
-    },
-    {
-        "id": "ebb919c7c2236035",
-        "type": "ui-button",
-        "z": "4b3ab4b1.cb9d9c",
-        "g": "3cf6a789e6a1831f",
-        "group": "345735b67be6ba0b",
-        "name": "Austrialia",
-        "label": "Austrialia",
-        "order": 6,
-        "width": "2",
-        "height": "1",
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "<PST><AZIMUTH>260</AZIMUTH></PST>",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 240,
-        "y": 560,
-        "wires": [
-            [
-                "207d94ee56f7e1b2"
-            ]
-        ]
-    },
-    {
-        "id": "b99b8dfea81a6973",
-        "type": "ui-button",
-        "z": "4b3ab4b1.cb9d9c",
-        "g": "3cf6a789e6a1831f",
-        "group": "345735b67be6ba0b",
-        "name": "Malaysia",
-        "label": "Malaysia",
-        "order": 8,
-        "width": "2",
-        "height": "1",
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "<PST><AZIMUTH>314</AZIMUTH></PST>",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 240,
-        "y": 600,
-        "wires": [
-            [
-                "207d94ee56f7e1b2"
-            ]
-        ]
-    },
-    {
-        "id": "94203104d8b8a2f8",
-        "type": "ui-button",
-        "z": "4b3ab4b1.cb9d9c",
-        "g": "3cf6a789e6a1831f",
-        "group": "345735b67be6ba0b",
-        "name": "Moscow",
-        "label": "Moscow",
-        "order": 7,
-        "width": "2",
-        "height": "1",
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "<PST><AZIMUTH>14</AZIMUTH></PST>",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 240,
-        "y": 640,
-        "wires": [
-            [
-                "207d94ee56f7e1b2"
+                "ad1725ed.315ba8"
             ]
         ]
     },

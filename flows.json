@@ -678,7 +678,7 @@
         "type": "ui-group",
         "name": "Power",
         "page": "6a79fea4971931e2",
-        "width": "2",
+        "width": 1,
         "height": 1,
         "order": 1,
         "showTitle": true,
@@ -692,7 +692,7 @@
         "type": "ui-group",
         "name": "Rotator",
         "page": "6a79fea4971931e2",
-        "width": "2",
+        "width": 1,
         "height": 1,
         "order": 2,
         "showTitle": true,
@@ -706,7 +706,7 @@
         "type": "ui-group",
         "name": "HF-Auto",
         "page": "6a79fea4971931e2",
-        "width": "2",
+        "width": 2,
         "height": 1,
         "order": 5,
         "showTitle": true,
@@ -2108,7 +2108,7 @@
         "z": "6aa99f42.c1e09",
         "name": "Peak Power",
         "group": "ac813a277dc276f3",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -2242,7 +2242,7 @@
         "z": "6aa99f42.c1e09",
         "name": "SWR",
         "group": "ac813a277dc276f3",
-        "order": 4,
+        "order": 1,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -2356,7 +2356,7 @@
         "z": "6aa99f42.c1e09",
         "name": "TX Watts",
         "group": "ac813a277dc276f3",
-        "order": 3,
+        "order": 2,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -2492,7 +2492,7 @@
         "name": "Ant Selection",
         "label": "Ant Selection",
         "order": 5,
-        "width": 0,
+        "width": 1,
         "height": 0,
         "columns": 1,
         "passthru": false,
@@ -2699,8 +2699,8 @@
         "group": "ac813a277dc276f3",
         "name": "Mode",
         "label": "Tuner Mode",
-        "order": 1,
-        "width": 0,
+        "order": 4,
+        "width": 1,
         "height": 0,
         "columns": 1,
         "passthru": false,
@@ -3251,8 +3251,7 @@
         "links": [
             "6a997dd0.80a73c",
             "6a333069.8531f8",
-            "2705c395.dbbfdc",
-            "6e695155564ee982"
+            "2705c395.dbbfdc"
         ],
         "x": 355,
         "y": 240,
@@ -3796,7 +3795,7 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 8,
+        "order": 10,
         "width": 2,
         "height": "1",
         "name": "Amp Status",
@@ -3934,7 +3933,7 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 6,
+        "order": 8,
         "width": 2,
         "height": "1",
         "name": "Antenna",
@@ -3958,7 +3957,7 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 9,
+        "order": 11,
         "width": 2,
         "height": "1",
         "name": "Band",
@@ -3982,7 +3981,7 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 7,
+        "order": 9,
         "width": 2,
         "height": "1",
         "name": "Key",
@@ -4067,7 +4066,7 @@
         "group": "66e9faf9106a437d",
         "name": "Ant 2 Button",
         "label": "ANT->OPEN",
-        "order": 10,
+        "order": 6,
         "width": "2",
         "height": "1",
         "emulateClick": false,
@@ -4126,7 +4125,7 @@
         "group": "66e9faf9106a437d",
         "name": "Ant 3 Button",
         "label": "ANT->OPEN",
-        "order": 11,
+        "order": 7,
         "width": "2",
         "height": "1",
         "emulateClick": false,
@@ -4727,7 +4726,7 @@
         "group": "dc0f77be5f70b8ab",
         "name": "13.8v Power Supply",
         "label": "{{label}}",
-        "order": 2,
+        "order": 1,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -4766,7 +4765,7 @@
         "group": "dc0f77be5f70b8ab",
         "name": "FlexRadio 8600",
         "label": "{{label}}",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -4794,6 +4793,183 @@
         "y": 620,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "a824fcbb6d8e701b",
+        "type": "comment",
+        "z": "0c1a690b7daff086",
+        "name": "Antenna A/B Switch",
+        "info": "",
+        "x": 530,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "7de2be4da17b7d4e",
+        "type": "homey-device-write",
+        "z": "0c1a690b7daff086",
+        "name": "Zero5 - Radio",
+        "homey": "e1653eafb4869e71",
+        "device": "Zero5 AB switch",
+        "deviceType": "str",
+        "capability": "onoff",
+        "capabilityType": "str",
+        "value": "true",
+        "valueType": "bool",
+        "x": 960,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "a70c958637a727b5",
+        "type": "homey-device-write",
+        "z": "0c1a690b7daff086",
+        "name": "Zero5 - Tunner 3",
+        "homey": "e1653eafb4869e71",
+        "device": "Zero5 AB switch",
+        "deviceType": "str",
+        "capability": "onoff",
+        "capabilityType": "str",
+        "value": "false",
+        "valueType": "bool",
+        "x": 970,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "00bdf3cf3325e870",
+        "type": "inject",
+        "z": "0c1a690b7daff086",
+        "name": "timestamp",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 800,
+        "wires": [
+            [
+                "02311c5b6d9ff027"
+            ]
+        ]
+    },
+    {
+        "id": "700beb82be1fedc3",
+        "type": "function",
+        "z": "0c1a690b7daff086",
+        "name": "A/B Switch",
+        "func": "\nvar power = msg.payload.value\nmsg.ui_update = {}\nif(power == true){\n    msg.ui_update.buttonColor = \"green\"\n    msg.ui_update.textcolor = \"white\"\n    msg.ui_update.label = \"Zero5 -> Radio\"\n    global.set('zero5-radio', true)\n}\n\nelse{\n    msg.ui_update.buttonColor = \"red\"\n    msg.ui_update.textcolor = \"white\"\n    msg.ui_update.label = \"Zero5 -> Tuner\"\n    global.set('zero5-radio', false)\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 860,
+        "wires": [
+            [
+                "e4c92147a265bc02"
+            ]
+        ]
+    },
+    {
+        "id": "02311c5b6d9ff027",
+        "type": "homey-device-read",
+        "z": "0c1a690b7daff086",
+        "name": "A/B Switch",
+        "homey": "e1653eafb4869e71",
+        "device": "Zero5 AB switch",
+        "deviceType": "str",
+        "capability": "onoff",
+        "capabilityType": "str",
+        "x": 370,
+        "y": 800,
+        "wires": [
+            [
+                "700beb82be1fedc3"
+            ]
+        ]
+    },
+    {
+        "id": "1f22b0bdea4adf3e",
+        "type": "switch",
+        "z": "0c1a690b7daff086",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 790,
+        "y": 800,
+        "wires": [
+            [
+                "a70c958637a727b5"
+            ],
+            [
+                "7de2be4da17b7d4e"
+            ]
+        ]
+    },
+    {
+        "id": "e4c92147a265bc02",
+        "type": "ui-button",
+        "z": "0c1a690b7daff086",
+        "group": "dc0f77be5f70b8ab",
+        "name": "Zero 5",
+        "label": "{{label}}",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "zero5-radio",
+        "payloadType": "global",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 630,
+        "y": 800,
+        "wires": [
+            [
+                "1f22b0bdea4adf3e"
+            ]
         ]
     },
     {
@@ -4979,7 +5155,8 @@
         "y": 220,
         "wires": [
             [
-                "ad1725ed.315ba8"
+                "ad1725ed.315ba8",
+                "a1376e0d48aae56f"
             ]
         ]
     },
@@ -5107,6 +5284,22 @@
                 "25da0020.89852"
             ]
         ]
+    },
+    {
+        "id": "a1376e0d48aae56f",
+        "type": "debug",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 260,
+        "wires": []
     },
     {
         "id": "c032270892866421",
@@ -8098,7 +8291,7 @@
         "z": "a08988a32286dd69",
         "name": "Fan Speed",
         "group": "2e457435f0507d11",
-        "order": 5,
+        "order": 8,
         "value": "payload",
         "valueType": "msg",
         "width": 2,
@@ -8152,7 +8345,7 @@
         "z": "a08988a32286dd69",
         "name": "8600 Volts",
         "group": "2e457435f0507d11",
-        "order": 7,
+        "order": 10,
         "value": "payload",
         "valueType": "msg",
         "width": "2",
@@ -8218,7 +8411,7 @@
         "z": "a08988a32286dd69",
         "name": "Temp",
         "group": "2e457435f0507d11",
-        "order": 6,
+        "order": 9,
         "value": "payload",
         "valueType": "msg",
         "width": "2",
@@ -8271,8 +8464,8 @@
         "type": "ui-text",
         "z": "a08988a32286dd69",
         "group": "2e457435f0507d11",
-        "order": 2,
-        "width": 4,
+        "order": 3,
+        "width": 1,
         "height": "1",
         "name": "Radio Version",
         "label": "Radio FW Version",
@@ -8295,8 +8488,8 @@
         "type": "ui-text",
         "z": "a08988a32286dd69",
         "group": "2e457435f0507d11",
-        "order": 3,
-        "width": 2,
+        "order": 4,
+        "width": 1,
         "height": "1",
         "name": "Status",
         "label": "Status",
@@ -8319,7 +8512,7 @@
         "type": "ui-text",
         "z": "a08988a32286dd69",
         "group": "2e457435f0507d11",
-        "order": 4,
+        "order": 5,
         "width": 2,
         "height": "1",
         "name": "Logged in Client Name",
@@ -8344,7 +8537,7 @@
         "z": "a08988a32286dd69",
         "name": "RF Power",
         "group": "2e457435f0507d11",
-        "order": 8,
+        "order": 11,
         "value": "payload",
         "valueType": "msg",
         "width": "2",
@@ -8385,8 +8578,8 @@
         "type": "ui-text",
         "z": "a08988a32286dd69",
         "group": "2e457435f0507d11",
-        "order": 11,
-        "width": "2",
+        "order": 2,
+        "width": 1,
         "height": "1",
         "name": "TX Status",
         "label": "TX Status",
@@ -8444,7 +8637,7 @@
         "type": "ui-text",
         "z": "a08988a32286dd69",
         "group": "2e457435f0507d11",
-        "order": 9,
+        "order": 6,
         "width": 2,
         "height": "1",
         "name": "Active Slice Freq",
@@ -8468,7 +8661,7 @@
         "type": "ui-text",
         "z": "a08988a32286dd69",
         "group": "2e457435f0507d11",
-        "order": 10,
+        "order": 7,
         "width": 2,
         "height": "1",
         "name": "Active Slice Mode",

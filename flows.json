@@ -244,6 +244,79 @@
         "h": 429.7777099609375
     },
     {
+        "id": "d898af37e0b7fdf8",
+        "type": "group",
+        "z": "db90effc.848d88",
+        "name": "",
+        "style": {
+            "fill": "#addb7b",
+            "label": true
+        },
+        "nodes": [
+            "ce4edd4.3abdca",
+            "46b94504.f1073c",
+            "50474891.1d8df",
+            "a521dad5.0a219",
+            "7f793353.333f1c",
+            "6a333069.8531f8",
+            "1ca2289f8f9b960d",
+            "d95c7f6e690265ea",
+            "079385e63fd804c4",
+            "a60150e1dc00908d",
+            "42a7321a357e5bc8"
+        ],
+        "x": 194,
+        "y": 639,
+        "w": 1082,
+        "h": 322
+    },
+    {
+        "id": "9825de3e2787437d",
+        "type": "group",
+        "z": "db90effc.848d88",
+        "name": "",
+        "style": {
+            "fill": "#bfdbef",
+            "label": true
+        },
+        "nodes": [
+            "5ec8d6ab.6e0188",
+            "7d46f5b1.b3e2bc",
+            "e0e75ca2.ff1d4",
+            "6a997dd0.80a73c",
+            "bf140ff2.fbfad8",
+            "c2cfea9f.5eb4d8",
+            "08f4474ef4a901ee",
+            "0a19eaa63110d81f"
+        ],
+        "x": 184,
+        "y": 979,
+        "w": 932,
+        "h": 222
+    },
+    {
+        "id": "2105fa837f707343",
+        "type": "group",
+        "z": "db90effc.848d88",
+        "name": "",
+        "style": {
+            "fill": "#ffbfbf",
+            "label": true
+        },
+        "nodes": [
+            "a6bbd8dc.d25278",
+            "73262.3837ad9ec",
+            "d0c4dc0a.7462c",
+            "b5299b3c.f75a6",
+            "2705c395.dbbfdc",
+            "b21dbde0.58adb8"
+        ],
+        "x": 184,
+        "y": 1219,
+        "w": 992,
+        "h": 162
+    },
+    {
         "id": "33e6f0db7d025118",
         "type": "flexradio-radio",
         "name": "",
@@ -586,7 +659,7 @@
                 "cols": "12"
             }
         ],
-        "order": 2,
+        "order": 1,
         "className": "",
         "visible": true,
         "disabled": false
@@ -596,7 +669,7 @@
         "type": "ui-group",
         "name": "Palstar LA-1K Amp",
         "page": "6a79fea4971931e2",
-        "width": "4",
+        "width": 3,
         "height": 1,
         "order": 4,
         "showTitle": true,
@@ -746,7 +819,7 @@
                 "cols": "12"
             }
         ],
-        "order": 1,
+        "order": 2,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -1139,11 +1212,11 @@
         "multicast": "false",
         "group": "",
         "datatype": "utf8",
-        "x": 120,
-        "y": 580,
+        "x": 180,
+        "y": 380,
         "wires": [
             [
-                "d06ce9a8629b34f4"
+                "36b3091a4078fb6b"
             ]
         ]
     },
@@ -1160,22 +1233,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 550,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "44f7dde4.01f60c",
-        "type": "debug",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 904,
-        "y": 198,
+        "x": 650,
+        "y": 420,
         "wires": []
     },
     {
@@ -1186,74 +1245,18 @@
         "property": "payload",
         "attr": "",
         "chr": "",
-        "x": 130,
-        "y": 1080,
+        "x": 190,
+        "y": 580,
         "wires": [
             [
-                "40157028.984ca8",
-                "c6d7d137.05abe",
                 "ed69e658.3af228",
                 "dcd1b2c5.c5faf8",
                 "c07dbd25.ad85f",
-                "899471da.01db4",
-                "c2d41dc7.0d4a08",
-                "d3f7c171.6c91d",
-                "a7e64c6d.259ee",
-                "d6a53060.82303",
-                "72d1bc90.d198fc",
-                "e5174c55.9befe8",
-                "54036e6f.943ad8",
                 "de104be27d6fcf35",
                 "c1f5c51601664052",
                 "1922b234.3d88d6"
             ]
         ]
-    },
-    {
-        "id": "40157028.984ca8",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "tuner",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 927,
-        "y": 271,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c6d7d137.05abe",
-        "type": "ui_text",
-        "z": "6aa99f42.c1e09",
-        "group": "d2a36faf.12fe2",
-        "order": 11,
-        "width": 6,
-        "height": 1,
-        "name": "",
-        "label": "Mode",
-        "format": "{{payload.HFAUTO.ATU_OPER_MODE[0]}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
-        "x": 910,
-        "y": 340,
-        "wires": []
     },
     {
         "id": "ed69e658.3af228",
@@ -1274,8 +1277,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 570,
-        "y": 628,
+        "x": 560,
+        "y": 480,
         "wires": [
             [
                 "0dce0add8c589d92"
@@ -1301,11 +1304,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 740,
+        "x": 560,
+        "y": 540,
         "wires": [
             [
-                "44f7dde4.01f60c",
                 "3a6e46e8e4fe86af"
             ]
         ]
@@ -1329,50 +1331,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 574,
-        "y": 817,
+        "x": 560,
+        "y": 620,
         "wires": [
             [
                 "1fd3659ee5284b39"
             ]
         ]
-    },
-    {
-        "id": "899471da.01db4",
-        "type": "ui_text",
-        "z": "6aa99f42.c1e09",
-        "group": "d2a36faf.12fe2",
-        "order": 10,
-        "width": 6,
-        "height": 1,
-        "name": "",
-        "label": "Ant Name",
-        "format": "{{payload.HFAUTO.ATU_ANT_NAME[0]}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
-        "x": 920,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "c2d41dc7.0d4a08",
-        "type": "ui_text",
-        "z": "6aa99f42.c1e09",
-        "group": "d2a36faf.12fe2",
-        "order": 12,
-        "width": 6,
-        "height": 1,
-        "name": "",
-        "label": "ATU Band",
-        "format": "{{payload.HFAUTO.ATU_BAND[0]}}",
-        "layout": "row-spread",
-        "x": 910,
-        "y": 500,
-        "wires": []
     },
     {
         "id": "a908fd67.bcfa98",
@@ -1386,720 +1351,8 @@
         "outport": "",
         "base64": false,
         "multicast": "broad",
-        "x": 1333,
-        "y": 1332,
-        "wires": []
-    },
-    {
-        "id": "f8f8fc64.931168",
-        "type": "ui_button",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "group": "8b8f9b230af6eb13",
-        "order": 5,
-        "width": 6,
-        "height": 1,
-        "passthru": false,
-        "label": "<font size = 5>Auto",
-        "tooltip": "",
-        "color": "{{color}}",
-        "bgcolor": "{{background}}",
-        "className": "",
-        "icon": "",
-        "payload": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 1042,
-        "y": 1244,
-        "wires": [
-            [
-                "a908fd67.bcfa98"
-            ]
-        ]
-    },
-    {
-        "id": "d968affb.cd6858",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "yellow",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "black",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 800,
-        "y": 1254,
-        "wires": [
-            [
-                "f8f8fc64.931168"
-            ]
-        ]
-    },
-    {
-        "id": "b397a63b.42115",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "green",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "Black",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 808,
-        "y": 1171,
-        "wires": [
-            [
-                "f8f8fc64.931168"
-            ]
-        ]
-    },
-    {
-        "id": "d3f7c171.6c91d",
-        "type": "switch",
-        "z": "6aa99f42.c1e09",
-        "name": "Mode = Auto",
-        "property": "tuner.HFAUTO.ATU_OPER_MODE[0]",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "AUTO",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 555,
-        "y": 1218,
-        "wires": [
-            [
-                "b397a63b.42115"
-            ],
-            [
-                "d968affb.cd6858"
-            ]
-        ]
-    },
-    {
-        "id": "53f0deb.072daa",
-        "type": "ui_button",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "group": "8b8f9b230af6eb13",
-        "order": 4,
-        "width": 6,
-        "height": 1,
-        "passthru": false,
-        "label": "<font size = 5>Manual",
-        "tooltip": "",
-        "color": "{{color}}",
-        "bgcolor": "{{background}}",
-        "className": "",
-        "icon": "",
-        "payload": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>MANUAL</CMD></EXT_CMD>",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 1071,
-        "y": 1461,
-        "wires": [
-            [
-                "a908fd67.bcfa98"
-            ]
-        ]
-    },
-    {
-        "id": "fad16d93.953f8",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "yellow",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "black",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 805,
-        "y": 1475,
-        "wires": [
-            [
-                "53f0deb.072daa"
-            ]
-        ]
-    },
-    {
-        "id": "df88b8c4.9e9ca",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "background",
-                "pt": "msg",
-                "to": "green",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "color",
-                "pt": "msg",
-                "to": "white",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 813,
-        "y": 1386,
-        "wires": [
-            [
-                "53f0deb.072daa"
-            ]
-        ]
-    },
-    {
-        "id": "a7e64c6d.259ee",
-        "type": "switch",
-        "z": "6aa99f42.c1e09",
-        "name": "Mode = Manual",
-        "property": "tuner.HFAUTO.ATU_OPER_MODE[0]",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "MANUAL",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 576,
-        "y": 1436,
-        "wires": [
-            [
-                "df88b8c4.9e9ca"
-            ],
-            [
-                "fad16d93.953f8"
-            ]
-        ]
-    },
-    {
-        "id": "d6a53060.82303",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "global",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "tuner.HFAUTO.ATU_CAP[0]",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "first",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 1620,
-        "wires": [
-            [
-                "af79ae54.674a88"
-            ]
-        ]
-    },
-    {
-        "id": "9a9645ae.fe4b7",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "msg",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.HFAUTO.ATU_CAP[0]",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "second",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 543,
-        "y": 1703,
-        "wires": [
-            [
-                "af79ae54.674a88"
-            ]
-        ]
-    },
-    {
-        "id": "72d1bc90.d198fc",
-        "type": "delay",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "0.5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 375,
-        "y": 1704,
-        "wires": [
-            [
-                "9a9645ae.fe4b7"
-            ]
-        ]
-    },
-    {
-        "id": "af79ae54.674a88",
-        "type": "combine-delta",
-        "z": "6aa99f42.c1e09",
-        "topic": "",
-        "topicA": "first",
-        "topicB": "second",
-        "name": "C Delta",
-        "x": 664,
-        "y": 1649,
-        "wires": [
-            [
-                "e55f3836.88f2d8"
-            ]
-        ]
-    },
-    {
-        "id": "e5174c55.9befe8",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "global",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "tuner.HFAUTO.ATU_IND[0]",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "first",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 1780,
-        "wires": [
-            [
-                "8781856a.3f2c5"
-            ]
-        ]
-    },
-    {
-        "id": "76d4783e.c1c2a8",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "msg",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.HFAUTO.ATU_IND[0]",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "second",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 487,
-        "y": 1898,
-        "wires": [
-            [
-                "8781856a.3f2c5"
-            ]
-        ]
-    },
-    {
-        "id": "54036e6f.943ad8",
-        "type": "delay",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "0.5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 330,
-        "y": 1900,
-        "wires": [
-            [
-                "76d4783e.c1c2a8"
-            ]
-        ]
-    },
-    {
-        "id": "8781856a.3f2c5",
-        "type": "combine-delta",
-        "z": "6aa99f42.c1e09",
-        "topic": "",
-        "topicA": "first",
-        "topicB": "second",
-        "name": "L Delta",
-        "x": 662,
-        "y": 1835,
-        "wires": [
-            [
-                "de29d40f.c9c85"
-            ]
-        ]
-    },
-    {
-        "id": "8dc2209a.dafc08",
-        "type": "comment",
-        "z": "6aa99f42.c1e09",
-        "name": "Tuning LED",
-        "info": "",
-        "x": 770,
-        "y": 1580,
-        "wires": []
-    },
-    {
-        "id": "de29d40f.c9c85",
-        "type": "switch",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 821,
-        "y": 1834,
-        "wires": [
-            [
-                "cfdf44b9.81572"
-            ],
-            [
-                "c9d2d78c.d58558"
-            ]
-        ]
-    },
-    {
-        "id": "cfdf44b9.81572",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "L Tuning - False",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "false",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 999,
-        "y": 1817,
-        "wires": [
-            [
-                "ffba0742.95a128"
-            ]
-        ]
-    },
-    {
-        "id": "c9d2d78c.d58558",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "L Tuning - True",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1000,
-        "y": 1863,
-        "wires": [
-            [
-                "ffba0742.95a128"
-            ]
-        ]
-    },
-    {
-        "id": "ffba0742.95a128",
-        "type": "ui_led",
-        "z": "6aa99f42.c1e09",
-        "order": 5,
-        "group": "d2a36faf.12fe2",
-        "width": 1,
-        "height": 1,
-        "label": "",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "true",
-                "valueType": "bool"
-            },
-            {
-                "color": "#008000",
-                "value": "false",
-                "valueType": "bool"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "L Tuning LED",
-        "x": 1214,
-        "y": 1831,
-        "wires": []
-    },
-    {
-        "id": "e55f3836.88f2d8",
-        "type": "switch",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 826,
-        "y": 1651,
-        "wires": [
-            [
-                "887de1a8.8943c8"
-            ],
-            [
-                "b1049c11.0a8858"
-            ]
-        ]
-    },
-    {
-        "id": "887de1a8.8943c8",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "C Tuning - False",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "false",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1004,
-        "y": 1634,
-        "wires": [
-            [
-                "deeaa805.80fee"
-            ]
-        ]
-    },
-    {
-        "id": "b1049c11.0a8858",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "C Tuning - True",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1005,
-        "y": 1680,
-        "wires": [
-            [
-                "deeaa805.80fee"
-            ]
-        ]
-    },
-    {
-        "id": "deeaa805.80fee",
-        "type": "ui_led",
-        "z": "6aa99f42.c1e09",
-        "order": 3,
-        "group": "d2a36faf.12fe2",
-        "width": 1,
-        "height": 1,
-        "label": "",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "true",
-                "valueType": "bool"
-            },
-            {
-                "color": "#008000",
-                "value": "false",
-                "valueType": "bool"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "C Tuning LED",
-        "x": 1220,
-        "y": 1660,
+        "x": 1100,
+        "y": 780,
         "wires": []
     },
     {
@@ -2212,29 +1465,9 @@
         "decimals": "0",
         "zeros": false,
         "myclass": "",
-        "x": 910,
-        "y": 620,
+        "x": 770,
+        "y": 480,
         "wires": []
-    },
-    {
-        "id": "d06ce9a8629b34f4",
-        "type": "rbe",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 150,
-        "y": 660,
-        "wires": [
-            [
-                "76de83fb.8325bc"
-            ]
-        ]
     },
     {
         "id": "1fd3659ee5284b39",
@@ -2346,8 +1579,8 @@
         "decimals": "2",
         "zeros": true,
         "myclass": "",
-        "x": 890,
-        "y": 820,
+        "x": 750,
+        "y": 620,
         "wires": []
     },
     {
@@ -2460,8 +1693,8 @@
         "decimals": "0",
         "zeros": false,
         "myclass": "",
-        "x": 880,
-        "y": 740,
+        "x": 760,
+        "y": 540,
         "wires": []
     },
     {
@@ -2476,8 +1709,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 1120,
+        "x": 550,
+        "y": 780,
         "wires": [
             [
                 "1fce4196c0c55488"
@@ -2504,12 +1737,12 @@
             },
             {
                 "label": "EFHW",
-                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
+                "value": "<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
                 "type": "str"
             },
             {
                 "label": "ZeroFive",
-                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
+                "value": "<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
                 "type": "str"
             }
         ],
@@ -2518,7 +1751,7 @@
         "topicType": "str",
         "className": "",
         "x": 730,
-        "y": 940,
+        "y": 700,
         "wires": [
             [
                 "0a868cebee90b619"
@@ -2530,7 +1763,7 @@
         "type": "function",
         "z": "6aa99f42.c1e09",
         "name": "Get Ant",
-        "func": "\nvar ant = global.get(\"tuner.HFAUTO.ATU_ANT_NR[0]\")\n\nif(ant == 1){\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>'\n}\n\nelse if (ant == 2) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>'\n}\n\nelse if (ant == 3) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>'\n}\n\nreturn msg;\n\n\n\n",
+        "func": "\nvar ant =  msg.payload.HFAUTO.ATU_ANT_NR[0]\nglobal.set('tuner.HFAUTO.ATU_ANT_NR[0]',ant)\nif(ant == 1){\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>'\n}\n\nelse if (ant == 2) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>'\n}\n\nelse if (ant == 3) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>'\n}\n\nreturn msg;\n\n\n\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -2538,7 +1771,7 @@
         "finalize": "",
         "libs": [],
         "x": 540,
-        "y": 940,
+        "y": 700,
         "wires": [
             [
                 "9f7d73a86f8576b2"
@@ -2560,12 +1793,12 @@
             },
             {
                 "t": "eq",
-                "v": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
+                "v": "<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
+                "v": "<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
                 "vt": "str"
             }
         ],
@@ -2573,7 +1806,7 @@
         "repair": false,
         "outputs": 3,
         "x": 910,
-        "y": 940,
+        "y": 700,
         "wires": [
             [
                 "a908fd67.bcfa98",
@@ -2584,7 +1817,8 @@
                 "50e3cb60a5cc4428"
             ],
             [
-                "a908fd67.bcfa98"
+                "a908fd67.bcfa98",
+                "50e3cb60a5cc4428"
             ]
         ]
     },
@@ -2606,7 +1840,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 1100,
-        "y": 920,
+        "y": 680,
         "wires": [
             [
                 "3ca910667e902369"
@@ -2617,7 +1851,7 @@
         "id": "3ca910667e902369",
         "type": "change",
         "z": "6aa99f42.c1e09",
-        "name": "",
+        "name": "HexBeam - Force Bypass",
         "rules": [
             {
                 "t": "set",
@@ -2632,8 +1866,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1280,
-        "y": 920,
+        "x": 1310,
+        "y": 680,
         "wires": [
             [
                 "a908fd67.bcfa98"
@@ -2658,7 +1892,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 1100,
-        "y": 960,
+        "y": 720,
         "wires": [
             [
                 "43f27492c8999b1d"
@@ -2669,7 +1903,7 @@
         "id": "43f27492c8999b1d",
         "type": "change",
         "z": "6aa99f42.c1e09",
-        "name": "",
+        "name": "Non-resonant - Force Auto Tune",
         "rules": [
             {
                 "t": "set",
@@ -2684,8 +1918,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1280,
-        "y": 960,
+        "x": 1330,
+        "y": 720,
         "wires": [
             [
                 "a908fd67.bcfa98"
@@ -2725,11 +1959,31 @@
         "topic": "",
         "topicType": "str",
         "className": "",
-        "x": 770,
-        "y": 1120,
+        "x": 710,
+        "y": 780,
         "wires": [
             [
                 "a908fd67.bcfa98"
+            ]
+        ]
+    },
+    {
+        "id": "36b3091a4078fb6b",
+        "type": "rbe",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 210,
+        "y": 460,
+        "wires": [
+            [
+                "76de83fb.8325bc"
             ]
         ]
     },
@@ -2769,12 +2023,11 @@
         "z": "db90effc.848d88",
         "name": "com-LA1K",
         "serial": "a6924d43.0c47e8",
-        "x": 760,
+        "x": 530,
         "y": 240,
         "wires": [
             [
-                "e904a333.e7ef68",
-                "c1cc3df4.530728"
+                "e904a333.e7ef68"
             ]
         ]
     },
@@ -2823,11 +2076,10 @@
         "object": "msg",
         "objectout": "msg",
         "x": 370,
-        "y": 520,
+        "y": 380,
         "wires": [
             [
-                "266071ac.268726",
-                "5af780f584d9853e"
+                "266071ac.268726"
             ]
         ]
     },
@@ -2844,7 +2096,7 @@
         "addname": "",
         "property": "payload",
         "x": 580,
-        "y": 540,
+        "y": 400,
         "wires": [
             [
                 "c3e6f8cf.67ebf8"
@@ -2955,14 +2207,12 @@
         "repair": false,
         "outputs": 13,
         "x": 790,
-        "y": 600,
+        "y": 460,
         "wires": [
             [
                 "3b279c71.6122c4"
             ],
-            [
-                "cc0749db.637ef8"
-            ],
+            [],
             [
                 "84c30f23.910d6"
             ],
@@ -2998,31 +2248,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1010,
-        "y": 380,
+        "x": 1030,
+        "y": 260,
         "wires": [
             [
                 "01e4fa2af4523121"
-            ]
-        ]
-    },
-    {
-        "id": "cc0749db.637ef8",
-        "type": "function",
-        "z": "db90effc.848d88",
-        "name": "Mode",
-        "func": "if (msg.payload == 1) {\n    msg.payload = \"OPERATE\"\n} \nelse\n{msg.payload = \"STANDBY\"\n}\n\nflow.set(\"mode\", msg.payload)\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1010,
-        "y": 420,
-        "wires": [
-            [
-                "9c8a509fdbacc4f9"
             ]
         ]
     },
@@ -3039,7 +2269,7 @@
         "finalize": "",
         "libs": [],
         "x": 1030,
-        "y": 460,
+        "y": 320,
         "wires": [
             [
                 "c74a4cbabccef332"
@@ -3053,11 +2283,13 @@
         "name": "Band",
         "func": "var payload = msg.payload;\nif (payload == \"0\") {\n  msg.payload = \"\";\n} else if (payload == \"1\") {\n  msg.payload = \"160m\";\n} else  if (payload == \"2\") {\n  msg.payload = \"80m\";\n} else if (payload == \"3\") {\n  msg.payload = \"40m\";\n} else if (payload == \"4\") {\n  msg.payload = \"20-15m\";\n} else if (payload == \"5\") {\n  msg.payload = \"12-10m\";\n} \nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1070,
-        "y": 640,
+        "libs": [],
+        "x": 1010,
+        "y": 440,
         "wires": [
             [
                 "728de2f4953c93e0"
@@ -3074,8 +2306,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 990,
-        "y": 900,
+        "x": 1030,
+        "y": 560,
         "wires": [
             [
                 "1e47c66a998571f5"
@@ -3086,6 +2318,7 @@
         "id": "5ec8d6ab.6e0188",
         "type": "function",
         "z": "db90effc.848d88",
+        "g": "9825de3e2787437d",
         "name": "Operate",
         "func": "msg.payload = \"AM1;\\r\\n\";\nreturn msg;",
         "outputs": 1,
@@ -3095,7 +2328,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 1500,
+        "y": 1120,
         "wires": [
             [
                 "6a997dd0.80a73c",
@@ -3107,6 +2340,7 @@
         "id": "7d46f5b1.b3e2bc",
         "type": "switch",
         "z": "db90effc.848d88",
+        "g": "9825de3e2787437d",
         "name": "OP/Stby",
         "property": "payload",
         "propertyType": "msg",
@@ -3126,7 +2360,7 @@
         "repair": false,
         "outputs": 2,
         "x": 570,
-        "y": 1520,
+        "y": 1140,
         "wires": [
             [
                 "5ec8d6ab.6e0188"
@@ -3140,6 +2374,7 @@
         "id": "e0e75ca2.ff1d4",
         "type": "function",
         "z": "db90effc.848d88",
+        "g": "9825de3e2787437d",
         "name": "Standby",
         "func": "msg.payload = \"AM2;\\r\\n\";\nreturn msg;",
         "outputs": 1,
@@ -3149,7 +2384,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 1540,
+        "y": 1160,
         "wires": [
             [
                 "6a997dd0.80a73c",
@@ -3161,6 +2396,7 @@
         "id": "a6bbd8dc.d25278",
         "type": "change",
         "z": "db90effc.848d88",
+        "g": "2105fa837f707343",
         "name": "",
         "rules": [
             {
@@ -3176,8 +2412,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 440,
-        "y": 1720,
+        "x": 500,
+        "y": 1340,
         "wires": [
             [
                 "b21dbde0.58adb8"
@@ -3188,6 +2424,7 @@
         "id": "73262.3837ad9ec",
         "type": "inject",
         "z": "db90effc.848d88",
+        "g": "2105fa837f707343",
         "name": "",
         "props": [
             {
@@ -3205,8 +2442,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 1720,
+        "x": 300,
+        "y": 1340,
         "wires": [
             [
                 "a6bbd8dc.d25278"
@@ -3217,6 +2454,7 @@
         "id": "d0c4dc0a.7462c",
         "type": "function",
         "z": "db90effc.848d88",
+        "g": "2105fa837f707343",
         "name": "Flex API Frequency Command",
         "func": "var freq = msg.payload * 1000\n\nfreq = parseInt(freq)\n\nvar length = Math.log(freq) * Math.LOG10E + 1 | 0;  // for positive integers\n\n\n\nif(length == 4){\n    \n    msg.payload = \"IF0000\"  +freq + \";\\r\\n\"\n}\n\nif(length == 5){\n    \n    msg.payload = \"IF000\"  +freq + \";\\r\\n\"\n}\n\n\nif(length == 6){\n    \n    msg.payload = \"IF00\"  +freq + \";\\r\\n\"\n}\n\n\n\nif(length == 7){\n    \n    msg.payload = \"IF0\"  +freq + \";\\r\\n\"\n}\n\n\n\n//msg.freq = freq\n//msg.length = length\n\nreturn msg;",
         "outputs": 1,
@@ -3225,8 +2463,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 1720,
+        "x": 930,
+        "y": 1340,
         "wires": [
             [
                 "2705c395.dbbfdc"
@@ -3237,10 +2475,11 @@
         "id": "b5299b3c.f75a6",
         "type": "comment",
         "z": "db90effc.848d88",
-        "name": "Flex API Frequency Command",
+        "g": "2105fa837f707343",
+        "name": "Sets Amp freqency when radio changes",
         "info": "",
-        "x": 530,
-        "y": 1620,
+        "x": 510,
+        "y": 1260,
         "wires": []
     },
     {
@@ -3251,8 +2490,7 @@
         "links": [
             "6a997dd0.80a73c",
             "6a333069.8531f8",
-            "2705c395.dbbfdc",
-            "b143710573f14272"
+            "2705c395.dbbfdc"
         ],
         "x": 355,
         "y": 240,
@@ -3263,43 +2501,36 @@
         ]
     },
     {
-        "id": "c1cc3df4.530728",
-        "type": "link out",
-        "z": "db90effc.848d88",
-        "name": "LA1K Serial Out",
-        "links": [],
-        "x": 1095,
-        "y": 240,
-        "wires": []
-    },
-    {
         "id": "6a997dd0.80a73c",
         "type": "link out",
         "z": "db90effc.848d88",
+        "g": "9825de3e2787437d",
         "name": "LA1K Mode Command",
         "links": [
             "1c20288d.2e3437"
         ],
         "x": 1075,
-        "y": 1480,
+        "y": 1100,
         "wires": []
     },
     {
         "id": "2705c395.dbbfdc",
         "type": "link out",
         "z": "db90effc.848d88",
+        "g": "2105fa837f707343",
         "name": "N1MM Freq Command",
         "links": [
             "1c20288d.2e3437"
         ],
-        "x": 1075,
-        "y": 1720,
+        "x": 1135,
+        "y": 1340,
         "wires": []
     },
     {
         "id": "b21dbde0.58adb8",
         "type": "rbe",
         "z": "db90effc.848d88",
+        "g": "2105fa837f707343",
         "name": "",
         "func": "rbe",
         "gap": "",
@@ -3308,8 +2539,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 630,
-        "y": 1720,
+        "x": 690,
+        "y": 1340,
         "wires": [
             [
                 "d0c4dc0a.7462c"
@@ -3320,26 +2551,29 @@
         "id": "bf140ff2.fbfad8",
         "type": "comment",
         "z": "db90effc.848d88",
+        "g": "9825de3e2787437d",
         "name": "Mode Select",
         "info": "",
         "x": 570,
-        "y": 1400,
+        "y": 1020,
         "wires": []
     },
     {
         "id": "ce4edd4.3abdca",
         "type": "comment",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "name": "Antenna Select",
         "info": "",
         "x": 740,
-        "y": 1060,
+        "y": 680,
         "wires": []
     },
     {
         "id": "c2cfea9f.5eb4d8",
         "type": "inject",
         "z": "db90effc.848d88",
+        "g": "9825de3e2787437d",
         "name": "Initialize",
         "props": [
             {
@@ -3353,12 +2587,12 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": 0.1,
+        "onceDelay": "1",
         "topic": "",
         "payload": "standby",
         "payloadType": "str",
         "x": 290,
-        "y": 1440,
+        "y": 1060,
         "wires": [
             [
                 "0a19eaa63110d81f"
@@ -3369,6 +2603,7 @@
         "id": "46b94504.f1073c",
         "type": "function",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "name": "ANT Button 1 Config",
         "func": "\nvar antenna = flow.get(\"antenna.response\")\nmsg.ui_update = {}\n\nif(antenna == \"1\"){\n    msg.ui_update.buttonColor = \"green\"\n    msg.ui_update.textcolor = \"white\"\n}\n\nelse{\n    msg.ui_update.buttonColor = \"red\"\n    msg.ui_update.textcolor = \"black\"\n}\n\nreturn msg;\n\n\n\n",
         "outputs": 1,
@@ -3377,8 +2612,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 1220,
+        "x": 560,
+        "y": 800,
         "wires": [
             [
                 "1ca2289f8f9b960d"
@@ -3389,6 +2624,7 @@
         "id": "50474891.1d8df",
         "type": "inject",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "name": "",
         "props": [
             {
@@ -3406,8 +2642,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 350,
-        "y": 1280,
+        "x": 310,
+        "y": 860,
         "wires": [
             [
                 "46b94504.f1073c",
@@ -3420,6 +2656,7 @@
         "id": "a521dad5.0a219",
         "type": "inject",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "name": "Initialize, ANT 1",
         "props": [
             {
@@ -3433,12 +2670,12 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": 0.1,
+        "onceDelay": "1",
         "topic": "",
         "payload": "1",
         "payloadType": "str",
-        "x": 860,
-        "y": 1160,
+        "x": 820,
+        "y": 740,
         "wires": [
             [
                 "7f793353.333f1c"
@@ -3464,18 +2701,17 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
-        "y": 580,
+        "x": 1070,
+        "y": 380,
         "wires": [
-            [
-                "c868ac909c7ca431"
-            ]
+            []
         ]
     },
     {
         "id": "7f793353.333f1c",
         "type": "function",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "name": "Ant Output",
         "func": "//msg.payload = \"AA\" + msg.payload + \";AR1;\\r\\n\";\nmsg.payload = \"AA\" + msg.payload + \";\\r\\n\";\nreturn msg;",
         "outputs": 1,
@@ -3484,8 +2720,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 1280,
+        "x": 1070,
+        "y": 860,
         "wires": [
             [
                 "6a333069.8531f8"
@@ -3496,12 +2732,13 @@
         "id": "6a333069.8531f8",
         "type": "link out",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "name": "LA1K Ant Select Command",
         "links": [
             "1c20288d.2e3437"
         ],
-        "x": 1275,
-        "y": 1240,
+        "x": 1235,
+        "y": 820,
         "wires": []
     },
     {
@@ -3519,8 +2756,8 @@
         "outputFieldDecimals": "0",
         "statusType": "none",
         "name": "",
-        "x": 1080,
-        "y": 700,
+        "x": 1040,
+        "y": 500,
         "wires": [
             [
                 "adb1ae6ea7d4e165"
@@ -3615,13 +2852,14 @@
         "id": "08f4474ef4a901ee",
         "type": "link out",
         "z": "db90effc.848d88",
+        "g": "9825de3e2787437d",
         "name": "Tell Radio Amp Status",
         "mode": "link",
         "links": [
             "941465de770ff4a6"
         ],
         "x": 1075,
-        "y": 1540,
+        "y": 1160,
         "wires": []
     },
     {
@@ -3630,10 +2868,10 @@
         "z": "db90effc.848d88",
         "name": "AmpTemp",
         "group": "66e9faf9106a437d",
-        "order": 2,
+        "order": 8,
         "value": "payload",
         "valueType": "msg",
-        "width": "2",
+        "width": 1,
         "height": "2",
         "gtype": "gauge-half",
         "gstyle": "rounded",
@@ -3672,8 +2910,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 1260,
-        "y": 700,
+        "x": 1280,
+        "y": 500,
         "wires": [
             []
         ]
@@ -3682,10 +2920,11 @@
         "id": "0a19eaa63110d81f",
         "type": "ui-switch",
         "z": "db90effc.848d88",
+        "g": "9825de3e2787437d",
         "name": "OP/STBY",
         "label": "OP/STBY",
         "group": "66e9faf9106a437d",
-        "order": 1,
+        "order": 3,
         "width": 1,
         "height": "1",
         "passthru": true,
@@ -3705,7 +2944,7 @@
         "officon": "lightbulb",
         "offcolor": "red",
         "x": 380,
-        "y": 1520,
+        "y": 1140,
         "wires": [
             [
                 "7d46f5b1.b3e2bc"
@@ -3730,7 +2969,7 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 3,
+        "order": 1,
         "width": 1,
         "height": "1",
         "name": "Active Slice Freq",
@@ -3745,48 +2984,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 1250,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "5af780f584d9853e",
-        "type": "debug",
-        "z": "db90effc.848d88",
-        "name": "debug 1",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "9c8a509fdbacc4f9",
-        "type": "ui-text",
-        "z": "db90effc.848d88",
-        "group": "66e9faf9106a437d",
-        "order": 8,
-        "width": 2,
-        "height": "1",
-        "name": "Amp Status",
-        "label": "Status",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#717171",
-        "wrapText": false,
-        "className": "",
-        "value": "payload",
-        "valueType": "msg",
-        "x": 1230,
-        "y": 420,
+        "x": 1310,
+        "y": 260,
         "wires": []
     },
     {
@@ -3795,8 +2994,8 @@
         "z": "db90effc.848d88",
         "name": "FWD Power",
         "group": "66e9faf9106a437d",
-        "order": 4,
-        "width": 0,
+        "order": 5,
+        "width": 1,
         "height": 0,
         "min": 0,
         "max": "1100",
@@ -3899,32 +3098,8 @@
         "decimals": "0",
         "zeros": false,
         "myclass": "",
-        "x": 1230,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "c868ac909c7ca431",
-        "type": "ui-text",
-        "z": "db90effc.848d88",
-        "group": "66e9faf9106a437d",
-        "order": 6,
-        "width": 2,
-        "height": "1",
-        "name": "Antenna",
-        "label": "Antenna",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#717171",
-        "wrapText": false,
-        "className": "",
-        "value": "payload",
-        "valueType": "msg",
-        "x": 1260,
-        "y": 580,
+        "x": 1290,
+        "y": 320,
         "wires": []
     },
     {
@@ -3932,8 +3107,8 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 9,
-        "width": 2,
+        "order": 2,
+        "width": 1,
         "height": "1",
         "name": "Band",
         "label": "Band",
@@ -3947,8 +3122,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 1250,
-        "y": 640,
+        "x": 1270,
+        "y": 440,
         "wires": []
     },
     {
@@ -3956,8 +3131,8 @@
         "type": "ui-text",
         "z": "db90effc.848d88",
         "group": "66e9faf9106a437d",
-        "order": 7,
-        "width": 2,
+        "order": 4,
+        "width": 1,
         "height": "1",
         "name": "Key",
         "label": "Key",
@@ -3971,18 +3146,19 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 1170,
-        "y": 900,
+        "x": 1270,
+        "y": 560,
         "wires": []
     },
     {
         "id": "1ca2289f8f9b960d",
         "type": "ui-button",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "group": "66e9faf9106a437d",
         "name": "Ant 1 Button",
         "label": "ANT->Tunner",
-        "order": 5,
+        "order": 6,
         "width": "2",
         "height": "1",
         "emulateClick": false,
@@ -4006,8 +3182,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 850,
-        "y": 1220,
+        "x": 810,
+        "y": 800,
         "wires": [
             [
                 "7f793353.333f1c"
@@ -4018,6 +3194,7 @@
         "id": "d95c7f6e690265ea",
         "type": "function",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "name": "ANT Button 2 Config",
         "func": "\nvar antenna = flow.get(\"antenna.response\")\nmsg.ui_update = {}\n\nif(antenna == \"2\"){\n    msg.ui_update.buttonColor = \"green\"\n    msg.ui_update.textcolor = \"white\"\n}\n\nelse{\n    msg.ui_update.buttonColor = \"red\"\n    msg.ui_update.textcolor = \"black\"\n}\n\nreturn msg;\n\n\n\n",
         "outputs": 1,
@@ -4026,8 +3203,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 1280,
+        "x": 560,
+        "y": 860,
         "wires": [
             [
                 "079385e63fd804c4"
@@ -4038,10 +3215,11 @@
         "id": "079385e63fd804c4",
         "type": "ui-button",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "group": "66e9faf9106a437d",
         "name": "Ant 2 Button",
         "label": "ANT->OPEN",
-        "order": 11,
+        "order": 9,
         "width": "2",
         "height": "1",
         "emulateClick": false,
@@ -4065,8 +3243,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 850,
-        "y": 1280,
+        "x": 810,
+        "y": 860,
         "wires": [
             [
                 "7f793353.333f1c"
@@ -4077,6 +3255,7 @@
         "id": "a60150e1dc00908d",
         "type": "function",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "name": "ANT Button 3 Config",
         "func": "\nvar antenna = flow.get(\"antenna.response\")\nmsg.ui_update = {}\n\nif(antenna == \"3\"){\n    msg.ui_update.buttonColor = \"green\"\n    msg.ui_update.textcolor = \"white\"\n}\n\nelse{\n    msg.ui_update.buttonColor = \"red\"\n    msg.ui_update.textcolor = \"black\"\n}\n\nreturn msg;\n\n\n\n",
         "outputs": 1,
@@ -4085,8 +3264,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 1340,
+        "x": 560,
+        "y": 920,
         "wires": [
             [
                 "42a7321a357e5bc8"
@@ -4097,10 +3276,11 @@
         "id": "42a7321a357e5bc8",
         "type": "ui-button",
         "z": "db90effc.848d88",
+        "g": "d898af37e0b7fdf8",
         "group": "66e9faf9106a437d",
         "name": "Ant 3 Button",
         "label": "ANT->OPEN",
-        "order": 10,
+        "order": 7,
         "width": "2",
         "height": "1",
         "emulateClick": false,
@@ -4124,8 +3304,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 850,
-        "y": 1340,
+        "x": 810,
+        "y": 920,
         "wires": [
             [
                 "7f793353.333f1c"
@@ -5195,7 +4375,7 @@
         "group": "345735b67be6ba0b",
         "name": "Azimuth",
         "label": "Azimuth",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "topic": "topic",
@@ -5228,7 +4408,7 @@
         "group": "345735b67be6ba0b",
         "name": "Stop",
         "label": "Stop",
-        "order": 1,
+        "order": 2,
         "width": "1",
         "height": "1",
         "emulateClick": false,
@@ -5284,7 +4464,7 @@
         "name": "Presets",
         "label": "Preset",
         "tooltip": "",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -6766,6 +5946,13 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
+                "to": "freq_active",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "TXFreq",
+                "pt": "global",
                 "to": "freq_active",
                 "tot": "flow"
             }
@@ -8723,8 +7910,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 2090,
-        "y": 1160,
+        "x": 2150,
+        "y": 1320,
         "wires": []
     },
     {

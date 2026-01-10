@@ -1,7 +1,7 @@
 {
     "name": "nodered-hamcontrol",
-    "description": "A Node-RED Project",
-    "version": "0.0.1",
+    "description": "Hamshack Automation - Flexradio, Homey, PSTroator, Streamdeck",
+    "version": "1.01",
     "dependencies": {
         "@mdi/js": "^7.4.47",
         "@mdi/react": "^1.6.1",

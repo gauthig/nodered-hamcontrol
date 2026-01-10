@@ -1265,7 +1265,7 @@
         "action": "append",
         "stackSeries": false,
         "pointShape": "circle",
-        "pointRadius": 4,
+        "pointRadius": "6",
         "showLegend": true,
         "removeOlder": 1,
         "removeOlderUnit": "3600",

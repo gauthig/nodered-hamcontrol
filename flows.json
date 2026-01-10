@@ -579,10 +579,10 @@
     {
         "id": "e1653eafb4869e71",
         "type": "homey-config",
-        "name": "Garrett's Home",
+        "name": "Homey-PI",
         "connection": "local",
         "homeyid": "",
-        "address": "http://192.168.1.179"
+        "address": "http://192.168.1.188:4859"
     },
     {
         "id": "8b8f9b230af6eb13",
@@ -3528,9 +3528,9 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": "5",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
@@ -3628,7 +3628,7 @@
         "z": "0c1a690b7daff086",
         "name": "13,8v On",
         "homey": "e1653eafb4869e71",
-        "device": "RADIO 13.4v Power Supply",
+        "device": "Plug - Ham Power Supply",
         "deviceType": "str",
         "capability": "onoff",
         "capabilityType": "str",
@@ -3644,7 +3644,7 @@
         "z": "0c1a690b7daff086",
         "name": "13.8v Off",
         "homey": "e1653eafb4869e71",
-        "device": "RADIO 13.4v Power Supply",
+        "device": "Plug - Ham Power Supply",
         "deviceType": "str",
         "capability": "onoff",
         "capabilityType": "str",
@@ -3668,7 +3668,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -3710,7 +3710,7 @@
         "z": "0c1a690b7daff086",
         "name": "PowerSupply",
         "homey": "e1653eafb4869e71",
-        "device": "RADIO 13.4v Power Supply",
+        "device": "Plug - Ham Power Supply",
         "deviceType": "str",
         "capability": "onoff",
         "capabilityType": "str",
@@ -3861,7 +3861,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -4016,7 +4016,7 @@
         "z": "0c1a690b7daff086",
         "group": "dc0f77be5f70b8ab",
         "name": "13.8v Power Supply",
-        "label": "13.8v Power Supply",
+        "label": "13.8v",
         "order": 1,
         "width": "1",
         "height": "1",
@@ -4102,7 +4102,7 @@
         "z": "0c1a690b7daff086",
         "name": "Zero5 - Radio",
         "homey": "e1653eafb4869e71",
-        "device": "Zero5 AB switch",
+        "device": "Antena AB Switch",
         "deviceType": "str",
         "capability": "onoff",
         "capabilityType": "str",
@@ -4118,7 +4118,7 @@
         "z": "0c1a690b7daff086",
         "name": "Zero5 - Tunner 3",
         "homey": "e1653eafb4869e71",
-        "device": "Zero5 AB switch",
+        "device": "Antena AB Switch",
         "deviceType": "str",
         "capability": "onoff",
         "capabilityType": "str",
@@ -4142,7 +4142,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -4183,7 +4183,7 @@
         "z": "0c1a690b7daff086",
         "name": "A/B Switch",
         "homey": "e1653eafb4869e71",
-        "device": "Zero5 AB switch",
+        "device": "Antena AB Switch",
         "deviceType": "str",
         "capability": "onoff",
         "capabilityType": "str",

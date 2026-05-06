@@ -6177,7 +6177,6 @@
             "f7964e13df52cc39",
             "e207bdc5c2b68e70",
             "3bba0f895c90fb10",
-            "76a563a680123b95",
             "7ade1449f1491f50"
         ],
         "x": 305,
@@ -8425,7 +8424,7 @@
         "z": "a08988a32286dd69",
         "g": "7eb8ccf7463cd38c",
         "name": "",
-        "info": "This ties into my home automation setup.\n I’m using a self‑hosted Homey instance \n (homey.com) along with a Shelly relay \n connected to the REM ON jack on the \n radio’s back panel, which must be enabled \n in the radio’s menu settings. \n \n I chose this method instead of s\n witching the radio’s main power supply \n on and off because it allows for a \n graceful shutdown.\n\n Also notice how the dashboard is \n hidden if power if the radio is off.\n You need to change this to reflect how\n you setup detects power on or off.\n Or just remove and make sure you unhide\n the dashbaord group.",
+        "info": "This ties into my home automation setup.\n I’m using a self‑hosted Homey instance \n (homey.com) along with a Shelly relay \n connected to the REM ON jack on the \n radio’s back panel, which must be enabled \n in the radio’s menu settings. \n \n I chose this method instead of s\n witching the radio’s main power supply \n on and off because it allows for a \n graceful shutdown.\n\n Also notice how the dashboard is \n hidden if power if the radio is off.\n You need to change this to reflect how\n you setup detects power on or off.\n Or just remove and make sure you unhide\n the dashbaord group.\n ",
         "x": 860,
         "y": 60,
         "wires": []

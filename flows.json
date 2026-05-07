@@ -30,13 +30,6 @@
         "env": []
     },
     {
-        "id": "4b3ab4b1.cb9d9c",
-        "type": "tab",
-        "label": "Rotator",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "07e56240b06b6a72",
         "type": "tab",
         "label": "StreamDeck",
@@ -4443,340 +4436,6 @@
         "wires": []
     },
     {
-        "id": "f20daddf.94164",
-        "type": "udp in",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "",
-        "iface": "",
-        "port": "12001",
-        "ipv": "udp4",
-        "multicast": "false",
-        "group": "",
-        "datatype": "utf8",
-        "x": 100,
-        "y": 80,
-        "wires": [
-            [
-                "3b0d4ef8.4e3372"
-            ]
-        ]
-    },
-    {
-        "id": "b2c46305.0eee1",
-        "type": "function",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "Parse AZ",
-        "func": "msg.payload= msg.payload = parseInt(msg.payload.substr(3,3))\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 120,
-        "y": 140,
-        "wires": [
-            [
-                "9c9d8e0bda8d9780"
-            ]
-        ]
-    },
-    {
-        "id": "3b0d4ef8.4e3372",
-        "type": "switch",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "AZ:",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 250,
-        "y": 80,
-        "wires": [
-            [
-                "b2c46305.0eee1"
-            ]
-        ]
-    },
-    {
-        "id": "ad1725ed.315ba8",
-        "type": "udp out",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "",
-        "addr": "127.0.0.1",
-        "iface": "",
-        "port": "12000",
-        "ipv": "udp4",
-        "outport": "",
-        "base64": false,
-        "multicast": "false",
-        "x": 660,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "3a0cc5e5.cdf65a",
-        "type": "function",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "AZ Input",
-        "func": "msg.payload = \"<PST><AZIMUTH>\"+msg.payload+\"</AZIMUTH></PST>\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 220,
-        "wires": [
-            [
-                "ad1725ed.315ba8",
-                "a1376e0d48aae56f"
-            ]
-        ]
-    },
-    {
-        "id": "25da0020.89852",
-        "type": "function",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "AZ Stop",
-        "func": "msg.payload = \"<PST><STOP>1</STOP></PST>\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 400,
-        "y": 300,
-        "wires": [
-            [
-                "ad1725ed.315ba8"
-            ]
-        ]
-    },
-    {
-        "id": "92850848.588cc8",
-        "type": "comment",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "PST RotatorAZ map control",
-        "info": "This code is based off of LA9VKA \nrotator code.\n\nChanges\n* Moved to dashboard 2.0\n* Removed the great SVG beam graphic as 2.0 \n  does not have that node yet (I do miss it)\n* Added presets dropdown\n   You must edit these for your true bearing\n   and what you want it to point towards. ",
-        "x": 160,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "6a45e596.540084",
-        "type": "inject",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "Poll AZ every 10 sec to update while idle",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "10",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "2",
-        "topic": "",
-        "payload": "<PST>AZ?</PST>",
-        "payloadType": "str",
-        "x": 320,
-        "y": 420,
-        "wires": [
-            [
-                "ad1725ed.315ba8"
-            ]
-        ]
-    },
-    {
-        "id": "9c9d8e0bda8d9780",
-        "type": "ui-number-input",
-        "z": "4b3ab4b1.cb9d9c",
-        "group": "345735b67be6ba0b",
-        "name": "Azimuth",
-        "label": "Azimuth",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "topic": "topic",
-        "topicType": "msg",
-        "min": 0,
-        "max": "360",
-        "step": 1,
-        "tooltip": "",
-        "passthru": false,
-        "sendOnBlur": true,
-        "sendOnEnter": true,
-        "className": "",
-        "clearable": false,
-        "icon": "",
-        "iconPosition": "left",
-        "iconInnerPosition": "inside",
-        "spinner": "default",
-        "x": 200,
-        "y": 220,
-        "wires": [
-            [
-                "3a0cc5e5.cdf65a"
-            ]
-        ]
-    },
-    {
-        "id": "352888a2a8f2dd6f",
-        "type": "ui-button",
-        "z": "4b3ab4b1.cb9d9c",
-        "group": "345735b67be6ba0b",
-        "name": "Stop",
-        "label": "Stop",
-        "order": 2,
-        "width": "1",
-        "height": "1",
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "cancel",
-        "iconPosition": "left",
-        "payload": "cancel",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "buttonColor": "red",
-        "textColor": "white",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 190,
-        "y": 300,
-        "wires": [
-            [
-                "25da0020.89852"
-            ]
-        ]
-    },
-    {
-        "id": "a1376e0d48aae56f",
-        "type": "debug",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "debug 3",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "a65973ee735832b2",
-        "type": "ui-dropdown",
-        "z": "4b3ab4b1.cb9d9c",
-        "group": "345735b67be6ba0b",
-        "name": "Presets",
-        "label": "Preset",
-        "tooltip": "",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "multiple": false,
-        "chips": false,
-        "clearable": false,
-        "options": [
-            {
-                "label": "Middle of US",
-                "value": "71",
-                "type": "str"
-            },
-            {
-                "label": "South America",
-                "value": "117",
-                "type": "str"
-            },
-            {
-                "label": "Caribbean",
-                "value": "100",
-                "type": "str"
-            },
-            {
-                "label": "Australia",
-                "value": "260",
-                "type": "str"
-            },
-            {
-                "label": "Malaysia",
-                "value": "314",
-                "type": "str"
-            },
-            {
-                "label": "Moscow",
-                "value": "14",
-                "type": "str"
-            },
-            {
-                "label": "Vancover",
-                "value": "352",
-                "type": "str"
-            },
-            {
-                "label": "Winnipeg",
-                "value": "35",
-                "type": "str"
-            },
-            {
-                "label": "NY/Toronto",
-                "value": "66",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "typeIsComboBox": true,
-        "msgTrigger": "onChange",
-        "x": 200,
-        "y": 360,
-        "wires": [
-            [
-                "f8b3008f2ad3d74d"
-            ]
-        ]
-    },
-    {
-        "id": "f8b3008f2ad3d74d",
-        "type": "function",
-        "z": "4b3ab4b1.cb9d9c",
-        "name": "AZ Input",
-        "func": "msg.payload = \"<PST><AZIMUTH>\"+msg.payload+\"</AZIMUTH></PST>\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 360,
-        "wires": [
-            [
-                "ad1725ed.315ba8"
-            ]
-        ]
-    },
-    {
         "id": "0da9973fc1670baa",
         "type": "sd-input",
         "z": "07e56240b06b6a72",
@@ -6695,7 +6354,7 @@
         "z": "a08988a32286dd69",
         "g": "1242b7cfad4f7922",
         "group": "2e457435f0507d11",
-        "order": 2,
+        "order": 3,
         "width": 2,
         "height": "1",
         "name": "Logged in Client Name",
@@ -6720,7 +6379,7 @@
         "z": "a08988a32286dd69",
         "g": "ba29ca5cbda84230",
         "group": "2e457435f0507d11",
-        "order": 7,
+        "order": 8,
         "width": 3,
         "height": "1",
         "name": "TX Status",
@@ -6781,7 +6440,7 @@
         "z": "a08988a32286dd69",
         "g": "3260a16cc3069ece",
         "group": "2e457435f0507d11",
-        "order": 4,
+        "order": 5,
         "width": 2,
         "height": "1",
         "name": "Active Slice Freq",
@@ -6806,7 +6465,7 @@
         "z": "a08988a32286dd69",
         "g": "3260a16cc3069ece",
         "group": "2e457435f0507d11",
-        "order": 5,
+        "order": 6,
         "width": 1,
         "height": "1",
         "name": "Active Slice Mode",
@@ -6833,7 +6492,7 @@
         "group": "2e457435f0507d11",
         "name": "APD Status",
         "label": "APD Status",
-        "order": 6,
+        "order": 7,
         "width": "3",
         "height": "1",
         "emulateClick": false,
@@ -7141,7 +6800,7 @@
         "g": "78ad37348fcf289f",
         "name": "SWR Linear",
         "group": "2e457435f0507d11",
-        "order": 10,
+        "order": 11,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -7256,7 +6915,7 @@
         "g": "78ad37348fcf289f",
         "name": "Volts",
         "group": "2e457435f0507d11",
-        "order": 11,
+        "order": 12,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -7371,7 +7030,7 @@
         "g": "78ad37348fcf289f",
         "name": "FWD Watts",
         "group": "2e457435f0507d11",
-        "order": 9,
+        "order": 10,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -7486,7 +7145,7 @@
         "g": "78ad37348fcf289f",
         "name": "Fan RPM",
         "group": "2e457435f0507d11",
-        "order": 13,
+        "order": 14,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -7601,7 +7260,7 @@
         "g": "ba29ca5cbda84230",
         "name": "Watts Setting",
         "group": "2e457435f0507d11",
-        "order": 8,
+        "order": 9,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -7716,7 +7375,7 @@
         "g": "78ad37348fcf289f",
         "name": "Temp",
         "group": "2e457435f0507d11",
-        "order": 12,
+        "order": 13,
         "width": 0,
         "height": 0,
         "min": 0,
@@ -7900,7 +7559,7 @@
         "z": "a08988a32286dd69",
         "g": "78ad37348fcf289f",
         "group": "2e457435f0507d11",
-        "order": 3,
+        "order": 4,
         "width": 2,
         "height": "1",
         "name": "PA Stats",
@@ -8514,7 +8173,7 @@
         "z": "a08988a32286dd69",
         "g": "a02f7d632e06cf7d",
         "group": "2e457435f0507d11",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "name": "persistent indicator",
@@ -8798,7 +8457,7 @@
         "page": "",
         "ui": "",
         "name": "Slice Display",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "head": "",
@@ -8813,5 +8472,391 @@
         "wires": [
             []
         ]
+    },
+    {
+        "type": "tab",
+        "label": "Rotator",
+        "id": "4b3ab4b1.cb9d9c"
+    },
+    {
+        "id": "f20daddf.94164",
+        "type": "udp in",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "",
+        "wires": [
+            [
+                "3b0d4ef8.4e3372"
+            ]
+        ],
+        "iface": "",
+        "port": "12001",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "utf8",
+        "x": 100,
+        "y": 80
+    },
+    {
+        "id": "b2c46305.0eee1",
+        "type": "function",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "Parse AZ",
+        "wires": [
+            [
+                "9c9d8e0bda8d9780",
+                "5a8b7827ed6f645f"
+            ]
+        ],
+        "func": "msg.payload= msg.payload = parseInt(msg.payload.substr(3,3))\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 120,
+        "y": 140
+    },
+    {
+        "id": "3b0d4ef8.4e3372",
+        "type": "switch",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "",
+        "wires": [
+            [
+                "b2c46305.0eee1"
+            ]
+        ],
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "AZ:",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 80
+    },
+    {
+        "id": "ad1725ed.315ba8",
+        "type": "udp out",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "",
+        "wires": [],
+        "addr": "127.0.0.1",
+        "iface": "",
+        "port": "12000",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "false",
+        "x": 660,
+        "y": 300
+    },
+    {
+        "id": "3a0cc5e5.cdf65a",
+        "type": "function",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "AZ Input",
+        "wires": [
+            [
+                "ad1725ed.315ba8",
+                "a1376e0d48aae56f"
+            ]
+        ],
+        "func": "msg.payload = \"<PST><AZIMUTH>\"+msg.payload+\"</AZIMUTH></PST>\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 220
+    },
+    {
+        "id": "25da0020.89852",
+        "type": "function",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "AZ Stop",
+        "wires": [
+            [
+                "ad1725ed.315ba8"
+            ]
+        ],
+        "func": "msg.payload = \"<PST><STOP>1</STOP></PST>\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 400,
+        "y": 300
+    },
+    {
+        "id": "92850848.588cc8",
+        "type": "comment",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "PST RotatorAZ map control",
+        "wires": [],
+        "info": "This code is based off of LA9VKA \nrotator code.\n\nChanges\n* Moved to dashboard 2.0\n* Removed the great SVG beam graphic as 2.0 \n  does not have that node yet (I do miss it)\n* Added presets dropdown\n   You must edit these for your true bearing\n   and what you want it to point towards. ",
+        "x": 160,
+        "y": 40
+    },
+    {
+        "id": "6a45e596.540084",
+        "type": "inject",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "Poll AZ every 10 sec to update while idle",
+        "wires": [
+            [
+                "ad1725ed.315ba8"
+            ]
+        ],
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "<PST>AZ?</PST>",
+        "payloadType": "str",
+        "x": 320,
+        "y": 420
+    },
+    {
+        "id": "9c9d8e0bda8d9780",
+        "type": "ui-number-input",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "Azimuth",
+        "wires": [
+            [
+                "3a0cc5e5.cdf65a"
+            ]
+        ],
+        "group": "345735b67be6ba0b",
+        "label": "Azimuth",
+        "order": 2,
+        "width": 1,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "360",
+        "step": 1,
+        "tooltip": "",
+        "passthru": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "default",
+        "x": 200,
+        "y": 220
+    },
+    {
+        "id": "352888a2a8f2dd6f",
+        "type": "ui-button",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "Stop",
+        "wires": [
+            [
+                "25da0020.89852"
+            ]
+        ],
+        "group": "345735b67be6ba0b",
+        "label": "Stop",
+        "order": 4,
+        "width": "6",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "centered-stop-btn",
+        "icon": "cancel",
+        "iconPosition": "left",
+        "payload": "cancel",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "red",
+        "textColor": "white",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 190,
+        "y": 300
+    },
+    {
+        "id": "a1376e0d48aae56f",
+        "type": "debug",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "debug 3",
+        "wires": [],
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 220
+    },
+    {
+        "id": "a65973ee735832b2",
+        "type": "ui-dropdown",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "Presets",
+        "wires": [
+            [
+                "f8b3008f2ad3d74d"
+            ]
+        ],
+        "group": "345735b67be6ba0b",
+        "label": "Preset",
+        "tooltip": "",
+        "order": 1,
+        "width": 1,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [
+            {
+                "label": "Middle of US",
+                "value": "71",
+                "type": "str"
+            },
+            {
+                "label": "South America",
+                "value": "117",
+                "type": "str"
+            },
+            {
+                "label": "Caribbean",
+                "value": "100",
+                "type": "str"
+            },
+            {
+                "label": "Australia",
+                "value": "260",
+                "type": "str"
+            },
+            {
+                "label": "Malaysia",
+                "value": "314",
+                "type": "str"
+            },
+            {
+                "label": "Moscow",
+                "value": "14",
+                "type": "str"
+            },
+            {
+                "label": "Vancover",
+                "value": "352",
+                "type": "str"
+            },
+            {
+                "label": "Winnipeg",
+                "value": "35",
+                "type": "str"
+            },
+            {
+                "label": "NY/Toronto",
+                "value": "66",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": true,
+        "msgTrigger": "onChange",
+        "x": 200,
+        "y": 360
+    },
+    {
+        "id": "f8b3008f2ad3d74d",
+        "type": "function",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "AZ Input",
+        "wires": [
+            [
+                "ad1725ed.315ba8"
+            ]
+        ],
+        "func": "msg.payload = \"<PST><AZIMUTH>\"+msg.payload+\"</AZIMUTH></PST>\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 360
+    },
+    {
+        "id": "5a8b7827ed6f645f",
+        "type": "ui-template",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "Azimuth Map",
+        "wires": [
+            []
+        ],
+        "group": "345735b67be6ba0b",
+        "page": "",
+        "ui": "",
+        "order": 3,
+        "width": "6",
+        "height": "6",
+        "head": "",
+        "format": "<template>\n  <div style=\"display:flex; flex-direction:column; align-items:center; padding:8px; width:100%; box-sizing:border-box;\">\n    <div style=\"color:#ccc; font-size:13px; margin-bottom:4px;\">\n      Azimuth: <strong style=\"color:white;\">{{ azimuth }}°</strong>\n    </div>\n    <svg ref=\"svg\" :width=\"mapSize\" :height=\"mapSize\" style=\"display:block; overflow:visible;\"></svg>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      azimuth: 0,\n      mapSize: 270,\n      qthLat: 34.5134,\n      qthLon: -117.2414,\n      worldData: null,\n    }\n  },\n\n  watch: {\n    msg(newMsg) {\n      if (newMsg && newMsg.payload !== undefined) {\n        const az = parseInt(newMsg.payload)\n        if (!isNaN(az)) {\n          this.azimuth = az\n          this.drawBeamLine()\n        }\n      }\n    }\n  },\n\n  mounted() {\n    this.loadD3().then(() => {\n      this.loadWorldData().then(() => {\n        this.drawMap()\n        this.drawBeamLine()\n      })\n    })\n  },\n\n  methods: {\n    loadD3() {\n      return new Promise((resolve) => {\n        if (window.d3) { resolve(); return; }\n        const script = document.createElement('script')\n        script.src = 'https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js'\n        script.onload = resolve\n        document.head.appendChild(script)\n      })\n    },\n\n    loadWorldData() {\n      return fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')\n        .then(r => r.json())\n        .then(topo => {\n          const script = document.createElement('script')\n          script.src = 'https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js'\n          return new Promise(resolve => {\n            if (window.topojson) {\n              this.worldData = window.topojson.feature(topo, topo.objects.countries)\n              resolve()\n            } else {\n              script.onload = () => {\n                this.worldData = window.topojson.feature(topo, topo.objects.countries)\n                resolve()\n              }\n              document.head.appendChild(script)\n            }\n          })\n        })\n    },\n\n    getProjection() {\n      const d3 = window.d3\n      const size = this.mapSize\n      return d3.geoAzimuthalEquidistant()\n        .rotate([-this.qthLon, -this.qthLat])\n        .scale((size / 2) / Math.PI * 0.98)\n        .translate([size / 2, size / 2])\n        .clipAngle(180)\n    },\n\n    drawMap() {\n      const d3 = window.d3\n      const svg = d3.select(this.$refs.svg)\n      svg.selectAll('*').remove()\n\n      const size = this.mapSize\n      const projection = this.getProjection()\n      const path = d3.geoPath().projection(projection)\n\n      svg.append('defs').append('clipPath')\n        .attr('id', 'circle-clip')\n        .append('circle')\n        .attr('cx', size / 2).attr('cy', size / 2).attr('r', (size / 2) - 2)\n\n      const g = svg.append('g').attr('clip-path', 'url(#circle-clip)')\n\n      g.append('circle')\n        .attr('cx', size / 2).attr('cy', size / 2)\n        .attr('r', (size / 2) - 2)\n        .attr('fill', '#1a3a5c')\n\n      const graticule = d3.geoGraticule()()\n      g.append('path')\n        .datum(graticule)\n        .attr('d', path)\n        .attr('fill', 'none')\n        .attr('stroke', '#2a4a6c')\n        .attr('stroke-width', 0.5)\n\n      if (this.worldData) {\n        g.append('path')\n          .datum(this.worldData)\n          .attr('d', path)\n          .attr('fill', '#2d6a2d')\n          .attr('stroke', '#1a4a1a')\n          .attr('stroke-width', 0.5)\n      }\n\n      svg.append('circle')\n        .attr('cx', size / 2).attr('cy', size / 2)\n        .attr('r', (size / 2) - 2)\n        .attr('fill', 'none')\n        .attr('stroke', '#4a7a9b')\n        .attr('stroke-width', 2)\n\n      const labels = [\n        { text: 'N', x: size / 2, y: 14 },\n        { text: 'S', x: size / 2, y: size - 4 },\n        { text: 'E', x: size - 6, y: size / 2 + 4 },\n        { text: 'W', x: 8, y: size / 2 + 4 },\n      ]\n      labels.forEach(l => {\n        svg.append('text')\n          .attr('x', l.x).attr('y', l.y)\n          .attr('text-anchor', 'middle')\n          .attr('fill', '#aaccff')\n          .attr('font-size', '12px')\n          .attr('font-weight', 'bold')\n          .attr('font-family', 'monospace')\n          .text(l.text)\n      })\n\n      svg.append('circle')\n        .attr('cx', size / 2).attr('cy', size / 2)\n        .attr('r', 4)\n        .attr('fill', '#ffcc00')\n        .attr('stroke', '#000')\n        .attr('stroke-width', 1)\n    },\n\n    drawBeamLine() {\n      if (!window.d3) return\n      const d3 = window.d3\n      const svg = d3.select(this.$refs.svg)\n      const size = this.mapSize\n\n      svg.selectAll('.beam-line, .beam-tip').remove()\n\n      const az = this.azimuth\n      const rad = (az - 90) * Math.PI / 180\n      const cx = size / 2\n      const cy = size / 2\n      const r = (size / 2) - 10\n\n      const x2 = cx + r * Math.cos(rad)\n      const y2 = cy + r * Math.sin(rad)\n\n      svg.append('line')\n        .attr('class', 'beam-line')\n        .attr('x1', cx).attr('y1', cy)\n        .attr('x2', x2).attr('y2', y2)\n        .attr('stroke', '#ff4444')\n        .attr('stroke-width', 2)\n        .attr('opacity', 0.9)\n\n      svg.append('circle')\n        .attr('class', 'beam-tip')\n        .attr('cx', x2).attr('cy', y2)\n        .attr('r', 5)\n        .attr('fill', '#ff4444')\n        .attr('opacity', 0.9)\n    }\n  }\n}\n</script>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 230,
+        "y": 520
+    },
+    {
+        "id": "css-centered-stop-001",
+        "type": "ui-template",
+        "z": "4b3ab4b1.cb9d9c",
+        "name": "CSS: center stop btn",
+        "wires": [
+            []
+        ],
+        "group": "",
+        "page": "",
+        "ui": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".centered-stop-btn { display:flex !important; justify-content:center !important; } .centered-stop-btn .v-btn { min-width:100px !important; max-width:160px !important; }",
+        "storeOutMessages": false,
+        "passthru": false,
+        "resendOnRefresh": false,
+        "templateScope": "page:style",
+        "className": ""
     }
 ]

@@ -8,13 +8,6 @@
         "env": []
     },
     {
-        "id": "6aa99f42.c1e09",
-        "type": "tab",
-        "label": "HF Auto ",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "0c1a690b7daff086",
         "type": "tab",
         "label": "Power Flow",
@@ -1225,792 +1218,6 @@
         "x": 600,
         "y": 60,
         "wires": []
-    },
-    {
-        "id": "f61aadba.3187c",
-        "type": "udp in",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "iface": "",
-        "port": "13080",
-        "ipv": "udp4",
-        "multicast": "false",
-        "group": "",
-        "datatype": "utf8",
-        "x": 120,
-        "y": 140,
-        "wires": [
-            [
-                "36b3091a4078fb6b",
-                "1922b234.3d88d6"
-            ]
-        ]
-    },
-    {
-        "id": "1922b234.3d88d6",
-        "type": "debug",
-        "z": "6aa99f42.c1e09",
-        "name": "D-HFAuto",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 460,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "76de83fb.8325bc",
-        "type": "xml",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "property": "payload",
-        "attr": "",
-        "chr": "",
-        "x": 130,
-        "y": 340,
-        "wires": [
-            [
-                "ed69e658.3af228",
-                "dcd1b2c5.c5faf8",
-                "c07dbd25.ad85f",
-                "de104be27d6fcf35",
-                "c1f5c51601664052"
-            ]
-        ]
-    },
-    {
-        "id": "ed69e658.3af228",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.HFAUTO.ATU_PWR_MAX[0]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 200,
-        "wires": [
-            [
-                "0dce0add8c589d92"
-            ]
-        ]
-    },
-    {
-        "id": "dcd1b2c5.c5faf8",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.HFAUTO.ATU_PWR[0]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 260,
-        "wires": [
-            [
-                "3a6e46e8e4fe86af"
-            ]
-        ]
-    },
-    {
-        "id": "c07dbd25.ad85f",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.HFAUTO.ATU_SWR[0]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 340,
-        "wires": [
-            [
-                "1fd3659ee5284b39"
-            ]
-        ]
-    },
-    {
-        "id": "a908fd67.bcfa98",
-        "type": "udp out",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "addr": "127.0.0.1",
-        "iface": "",
-        "port": "12020",
-        "ipv": "udp4",
-        "outport": "",
-        "base64": false,
-        "multicast": "broad",
-        "x": 1060,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "0dce0add8c589d92",
-        "type": "ui-gauge-linear",
-        "z": "6aa99f42.c1e09",
-        "name": "Peak Power",
-        "group": "ac813a277dc276f3",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "min": 0,
-        "max": "1100",
-        "ticks": [],
-        "colors": [
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 169, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 169, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            }
-        ],
-        "zeroCrossColors": [
-            "#ff4c16",
-            "#00e300"
-        ],
-        "mode": "fullBar",
-        "bar": "segmented",
-        "minLabel": "",
-        "maxLabel": "",
-        "label": "Peak Watts",
-        "icon": "",
-        "unit": "W",
-        "dim": 0.2,
-        "property": "payload",
-        "decimals": "0",
-        "zeros": false,
-        "myclass": "",
-        "x": 690,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "1fd3659ee5284b39",
-        "type": "ui-gauge-linear",
-        "z": "6aa99f42.c1e09",
-        "name": "SWR",
-        "group": "ac813a277dc276f3",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "min": 0,
-        "max": "5",
-        "ticks": [],
-        "colors": [
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 169, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 169, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 169, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            }
-        ],
-        "zeroCrossColors": [
-            "#ff4c16",
-            "#00e300"
-        ],
-        "mode": "fullBar",
-        "bar": "segmented",
-        "minLabel": "",
-        "maxLabel": "",
-        "label": "SWR",
-        "icon": "",
-        "unit": "",
-        "dim": 0.2,
-        "property": "payload",
-        "decimals": "2",
-        "zeros": true,
-        "myclass": "",
-        "x": 670,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "3a6e46e8e4fe86af",
-        "type": "ui-gauge-linear",
-        "z": "6aa99f42.c1e09",
-        "name": "TX Watts",
-        "group": "ac813a277dc276f3",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "min": 0,
-        "max": "1100",
-        "ticks": [],
-        "colors": [
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(0, 227, 0)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 169, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 169, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            },
-            {
-                "size": 100,
-                "color": "rgb(255, 76, 22)"
-            }
-        ],
-        "zeroCrossColors": [
-            "#ff4c16",
-            "#00e300"
-        ],
-        "mode": "fullBar",
-        "bar": "segmented",
-        "minLabel": "",
-        "maxLabel": "",
-        "label": "TX Watts",
-        "icon": "",
-        "unit": "W",
-        "dim": 0.2,
-        "property": "payload",
-        "decimals": "0",
-        "zeros": false,
-        "myclass": "",
-        "x": 680,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "de104be27d6fcf35",
-        "type": "function",
-        "z": "6aa99f42.c1e09",
-        "name": "Mode Config",
-        "func": "var mode = msg.payload.HFAUTO.ATU_OPER_MODE[0]\n//var mode = global.get(\"tuner.HFAUTO.ATU_OPER_MODE[0]\") payload.HFAUTO.ATU_OPER_MODE[0]\n\nif (mode == \"BYPASS\") {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>'\n}\n\nelse if (mode == \"AUTO\") {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>'\n}\n\nelse if (mode == \"MANUAL\") {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>MANUAL</CMD></EXT_CMD>'\n}\nreturn msg;\n\n\n\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 470,
-        "y": 500,
-        "wires": [
-            [
-                "1fce4196c0c55488"
-            ]
-        ]
-    },
-    {
-        "id": "9f7d73a86f8576b2",
-        "type": "ui-radio-group",
-        "z": "6aa99f42.c1e09",
-        "group": "ac813a277dc276f3",
-        "name": "Ant Selection",
-        "label": "Ant Selection",
-        "order": 5,
-        "width": 2,
-        "height": 0,
-        "columns": 1,
-        "passthru": false,
-        "options": [
-            {
-                "label": "HexBeam",
-                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>",
-                "type": "str"
-            },
-            {
-                "label": "EFHW",
-                "value": "<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
-                "type": "str"
-            },
-            {
-                "label": "ZeroFive",
-                "value": "<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "",
-        "topicType": "str",
-        "className": "",
-        "x": 650,
-        "y": 420,
-        "wires": [
-            [
-                "0a868cebee90b619"
-            ]
-        ]
-    },
-    {
-        "id": "c1f5c51601664052",
-        "type": "function",
-        "z": "6aa99f42.c1e09",
-        "name": "Get Ant",
-        "func": "\nvar ant =  msg.payload.HFAUTO.ATU_ANT_NR[0]\nglobal.set('tuner.HFAUTO.ATU_ANT_NR[0]',ant)\nif(ant == 1){\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>'\n}\n\nelse if (ant == 2) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>'\n}\n\nelse if (ant == 3) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>'\n}\n\nreturn msg;\n\n\n\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 460,
-        "y": 420,
-        "wires": [
-            [
-                "9f7d73a86f8576b2"
-            ]
-        ]
-    },
-    {
-        "id": "0a868cebee90b619",
-        "type": "switch",
-        "z": "6aa99f42.c1e09",
-        "name": "Ant Control",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "<?xml version=\"1.0\" encoding=\"iso - 8859 - 1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 3,
-        "x": 830,
-        "y": 420,
-        "wires": [
-            [
-                "a908fd67.bcfa98",
-                "a019a2910581f218"
-            ],
-            [
-                "a908fd67.bcfa98",
-                "50e3cb60a5cc4428"
-            ],
-            [
-                "a908fd67.bcfa98",
-                "50e3cb60a5cc4428"
-            ]
-        ]
-    },
-    {
-        "id": "a019a2910581f218",
-        "type": "delay",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1020,
-        "y": 400,
-        "wires": [
-            [
-                "3ca910667e902369"
-            ]
-        ]
-    },
-    {
-        "id": "3ca910667e902369",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "HexBeam - Force Bypass",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1230,
-        "y": 400,
-        "wires": [
-            [
-                "a908fd67.bcfa98"
-            ]
-        ]
-    },
-    {
-        "id": "50e3cb60a5cc4428",
-        "type": "delay",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1020,
-        "y": 440,
-        "wires": [
-            [
-                "43f27492c8999b1d"
-            ]
-        ]
-    },
-    {
-        "id": "43f27492c8999b1d",
-        "type": "change",
-        "z": "6aa99f42.c1e09",
-        "name": "Non-resonant - Force Auto Tune",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1250,
-        "y": 440,
-        "wires": [
-            [
-                "a908fd67.bcfa98"
-            ]
-        ]
-    },
-    {
-        "id": "1fce4196c0c55488",
-        "type": "ui-radio-group",
-        "z": "6aa99f42.c1e09",
-        "group": "ac813a277dc276f3",
-        "name": "Mode",
-        "label": "Tuner Mode",
-        "order": 4,
-        "width": 1,
-        "height": 0,
-        "columns": 1,
-        "passthru": false,
-        "options": [
-            {
-                "label": "Bypass",
-                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>",
-                "type": "str"
-            },
-            {
-                "label": "Auto",
-                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>",
-                "type": "str"
-            },
-            {
-                "label": "Manual",
-                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>MANUAL</CMD></EXT_CMD>",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "",
-        "topicType": "str",
-        "className": "",
-        "x": 630,
-        "y": 500,
-        "wires": [
-            [
-                "a908fd67.bcfa98"
-            ]
-        ]
-    },
-    {
-        "id": "36b3091a4078fb6b",
-        "type": "rbe",
-        "z": "6aa99f42.c1e09",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 150,
-        "y": 220,
-        "wires": [
-            [
-                "76de83fb.8325bc"
-            ]
-        ]
     },
     {
         "id": "efc6338c0f64015e",
@@ -8853,5 +8060,798 @@
         "reg": false,
         "x": 1040,
         "y": 1160
+    },
+    {
+        "type": "tab",
+        "label": "HF Auto ",
+        "id": "6aa99f42.c1e09",
+        "info": "",
+        "disabled": false
+    },
+    {
+        "id": "f61aadba.3187c",
+        "type": "udp in",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "wires": [
+            [
+                "36b3091a4078fb6b",
+                "1922b234.3d88d6"
+            ]
+        ],
+        "iface": "",
+        "port": "13080",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "utf8",
+        "x": 120,
+        "y": 140
+    },
+    {
+        "id": "1922b234.3d88d6",
+        "type": "debug",
+        "z": "6aa99f42.c1e09",
+        "name": "D-HFAuto",
+        "wires": [],
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 140
+    },
+    {
+        "id": "36b3091a4078fb6b",
+        "type": "rbe",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "wires": [
+            [
+                "76de83fb.8325bc"
+            ]
+        ],
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 150,
+        "y": 220
+    },
+    {
+        "id": "76de83fb.8325bc",
+        "type": "xml",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "wires": [
+            [
+                "ed69e658.3af228",
+                "dcd1b2c5.c5faf8",
+                "c07dbd25.ad85f",
+                "de104be27d6fcf35",
+                "c1f5c51601664052"
+            ]
+        ],
+        "property": "payload",
+        "attr": "",
+        "chr": "",
+        "x": 130,
+        "y": 340
+    },
+    {
+        "id": "ed69e658.3af228",
+        "type": "change",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "wires": [
+            [
+                "0dce0add8c589d92"
+            ]
+        ],
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.HFAUTO.ATU_PWR_MAX[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 200
+    },
+    {
+        "id": "dcd1b2c5.c5faf8",
+        "type": "change",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "wires": [
+            [
+                "3a6e46e8e4fe86af"
+            ]
+        ],
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.HFAUTO.ATU_PWR[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 260
+    },
+    {
+        "id": "c07dbd25.ad85f",
+        "type": "change",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "wires": [
+            [
+                "1fd3659ee5284b39"
+            ]
+        ],
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.HFAUTO.ATU_SWR[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 340
+    },
+    {
+        "id": "a908fd67.bcfa98",
+        "type": "udp out",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "wires": [],
+        "addr": "127.0.0.1",
+        "iface": "",
+        "port": "12020",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "broad",
+        "x": 1060,
+        "y": 540
+    },
+    {
+        "id": "0dce0add8c589d92",
+        "type": "ui-gauge-linear",
+        "z": "6aa99f42.c1e09",
+        "name": "Peak Power",
+        "wires": [],
+        "group": "ac813a277dc276f3",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "min": 0,
+        "max": "1100",
+        "ticks": [],
+        "colors": [
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            }
+        ],
+        "zeroCrossColors": [
+            "#ff4c16",
+            "#00e300"
+        ],
+        "mode": "fullBar",
+        "bar": "segmented",
+        "minLabel": "",
+        "maxLabel": "",
+        "label": "Peak Watts",
+        "icon": "",
+        "unit": "W",
+        "dim": 0.2,
+        "property": "payload",
+        "decimals": "0",
+        "zeros": false,
+        "myclass": "",
+        "x": 690,
+        "y": 200
+    },
+    {
+        "id": "1fd3659ee5284b39",
+        "type": "ui-gauge-linear",
+        "z": "6aa99f42.c1e09",
+        "name": "SWR",
+        "wires": [],
+        "group": "ac813a277dc276f3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "min": 0,
+        "max": "5",
+        "ticks": [],
+        "colors": [
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            }
+        ],
+        "zeroCrossColors": [
+            "#ff4c16",
+            "#00e300"
+        ],
+        "mode": "fullBar",
+        "bar": "segmented",
+        "minLabel": "",
+        "maxLabel": "",
+        "label": "SWR",
+        "icon": "",
+        "unit": "",
+        "dim": 0.2,
+        "property": "payload",
+        "decimals": "2",
+        "zeros": true,
+        "myclass": "",
+        "x": 670,
+        "y": 340
+    },
+    {
+        "id": "3a6e46e8e4fe86af",
+        "type": "ui-gauge-linear",
+        "z": "6aa99f42.c1e09",
+        "name": "TX Watts",
+        "wires": [],
+        "group": "ac813a277dc276f3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "min": 0,
+        "max": "1100",
+        "ticks": [],
+        "colors": [
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(0, 227, 0)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 169, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            },
+            {
+                "size": 100,
+                "color": "rgb(255, 76, 22)"
+            }
+        ],
+        "zeroCrossColors": [
+            "#ff4c16",
+            "#00e300"
+        ],
+        "mode": "fullBar",
+        "bar": "segmented",
+        "minLabel": "",
+        "maxLabel": "",
+        "label": "TX Watts",
+        "icon": "",
+        "unit": "W",
+        "dim": 0.2,
+        "property": "payload",
+        "decimals": "0",
+        "zeros": false,
+        "myclass": "",
+        "x": 680,
+        "y": 260
+    },
+    {
+        "id": "de104be27d6fcf35",
+        "type": "function",
+        "z": "6aa99f42.c1e09",
+        "name": "Mode Config",
+        "wires": [
+            [
+                "1fce4196c0c55488"
+            ]
+        ],
+        "func": "var mode = msg.payload?.HFAUTO?.ATU_OPER_MODE?.[0];\nif (!mode) return null;\n\nif (mode === \"BYPASS\") {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>';\n} else if (mode === \"AUTO\") {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>';\n} else if (mode === \"MANUAL\") {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>MANUAL</CMD></EXT_CMD>';\n} else {\n    return null;\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 500
+    },
+    {
+        "id": "c1f5c51601664052",
+        "type": "function",
+        "z": "6aa99f42.c1e09",
+        "name": "Get Ant",
+        "wires": [
+            [
+                "9f7d73a86f8576b2"
+            ]
+        ],
+        "func": "var ant = parseInt(msg.payload?.HFAUTO?.ATU_ANT_NR?.[0]);\nif (isNaN(ant)) return null;\n\nglobal.set('tuner.HFAUTO.ATU_ANT_NR[0]', ant);\n\nif (ant === 1) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>';\n} else if (ant === 2) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>';\n} else if (ant === 3) {\n    msg.payload = '<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>';\n} else {\n    return null;\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 420
+    },
+    {
+        "id": "9f7d73a86f8576b2",
+        "type": "ui-radio-group",
+        "z": "6aa99f42.c1e09",
+        "name": "Ant Selection",
+        "wires": [
+            [
+                "0a868cebee90b619"
+            ]
+        ],
+        "group": "ac813a277dc276f3",
+        "label": "Ant Selection",
+        "order": 5,
+        "width": 2,
+        "height": 0,
+        "columns": 1,
+        "passthru": false,
+        "options": [
+            {
+                "label": "HexBeam",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>",
+                "type": "str"
+            },
+            {
+                "label": "EFHW",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
+                "type": "str"
+            },
+            {
+                "label": "ZeroFive",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 650,
+        "y": 420
+    },
+    {
+        "id": "0a868cebee90b619",
+        "type": "switch",
+        "z": "6aa99f42.c1e09",
+        "name": "Ant Control",
+        "wires": [
+            [
+                "a908fd67.bcfa98",
+                "a019a2910581f218"
+            ],
+            [
+                "a908fd67.bcfa98",
+                "50e3cb60a5cc4428"
+            ],
+            [
+                "a908fd67.bcfa98",
+                "50e3cb60a5cc4428"
+            ]
+        ],
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT1</CMD></EXT_CMD>",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT2</CMD></EXT_CMD>",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>ANT3</CMD></EXT_CMD>",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 830,
+        "y": 420
+    },
+    {
+        "id": "a019a2910581f218",
+        "type": "delay",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "wires": [
+            [
+                "3ca910667e902369"
+            ]
+        ],
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1020,
+        "y": 400
+    },
+    {
+        "id": "3ca910667e902369",
+        "type": "change",
+        "z": "6aa99f42.c1e09",
+        "name": "HexBeam - Force Bypass",
+        "wires": [
+            [
+                "a908fd67.bcfa98"
+            ]
+        ],
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 400
+    },
+    {
+        "id": "50e3cb60a5cc4428",
+        "type": "delay",
+        "z": "6aa99f42.c1e09",
+        "name": "",
+        "wires": [
+            [
+                "43f27492c8999b1d"
+            ]
+        ],
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1020,
+        "y": 440
+    },
+    {
+        "id": "43f27492c8999b1d",
+        "type": "change",
+        "z": "6aa99f42.c1e09",
+        "name": "Non-resonant - Force Auto Tune",
+        "wires": [
+            [
+                "a908fd67.bcfa98"
+            ]
+        ],
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1250,
+        "y": 440
+    },
+    {
+        "id": "1fce4196c0c55488",
+        "type": "ui-radio-group",
+        "z": "6aa99f42.c1e09",
+        "name": "Mode",
+        "wires": [
+            [
+                "a908fd67.bcfa98"
+            ]
+        ],
+        "group": "ac813a277dc276f3",
+        "label": "Tuner Mode",
+        "order": 4,
+        "width": 1,
+        "height": 0,
+        "columns": 1,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Bypass",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>BYPASS</CMD></EXT_CMD>",
+                "type": "str"
+            },
+            {
+                "label": "Auto",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>AUTO</CMD></EXT_CMD>",
+                "type": "str"
+            },
+            {
+                "label": "Manual",
+                "value": "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?><EXT_CMD><CMD>MANUAL</CMD></EXT_CMD>",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 630,
+        "y": 500
     }
 ]

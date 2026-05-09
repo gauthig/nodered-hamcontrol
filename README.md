@@ -1,6 +1,6 @@
 # nodered-hamcontrol
 
-Node-RED automation flows for a ham radio station — integrating a FlexRadio transceiver, Palstar LA-1K amplifier, HFAuto ATU, and PST antenna rotator into a unified Dashboard 2.0 control surface.
+Node-RED automation flows for a ham radio station  -  integrating a FlexRadio transceiver, Palstar LA-1K amplifier, HFAuto ATU, and PST antenna rotator into a unified Dashboard 2.0 control surface.
 
 > **Station:** Apple Valley, CA (34.5134° N / 117.2414° W)
 > **Platform:** Node-RED with Dashboard 2.0 (`@flowfuse/node-red-dashboard`)
@@ -26,16 +26,16 @@ Integrates with a **FlexRadio SmartSDR** transceiver via the `node-red-contrib-f
 
 **Key capabilities:**
 - Monitors up to four VFO slices with live frequency and mode display
-- Displays real-time meters — PA temperature, supply voltage, and RF power
+- Displays real-time meters  -  PA temperature, supply voltage, and RF power
 - Automatically shows/hides dashboard panels based on radio power state
 - Limits transmit power when the LA-1K amplifier is in standby (30 W) vs. operate (90 W)
 - APD (automatic pre-distortion) state monitoring
-- 15-second link-staleness detection with error reporting
+- Dual-path disconnect detection: instant via `connection/tcp` TCP events, with a 15-second staleness watchdog fallback for physical cable pulls
 
 **Provides to other flows:**
-- `global.TXFreq` — current TX frequency in kHz, consumed by the LA-1K amp flow for band/frequency sync
-- `global.ampPower` — amp power state flag, controls LA-1K polling
-- Link-in `941465de770ff4a6` — receives amp operate/standby state from the LA-1K flow and adjusts radio output accordingly
+- `global.TXFreq`  -  current TX frequency in kHz, consumed by the LA-1K amp flow for band/frequency sync
+- `global.ampPower`  -  amp power state flag, controls LA-1K polling
+- Link-in `941465de770ff4a6`  -  receives amp operate/standby state from the LA-1K flow and adjusts radio output accordingly
 
 → Full documentation: [FlexRadio.md](FlexRadio.md)
 
@@ -72,7 +72,7 @@ Monitors and controls a **Palstar LA-1K** HF linear amplifier over a serial (RS-
 - Live FWD power gauge, frequency, band, temperature (°F), and key status
 - Operate / Standby control with immediate serial command
 - Three-antenna selection (Tuner, OPEN × 2) with colored button feedback showing active antenna
-- Automatic frequency sync from the radio (`global.TXFreq`) — sends `IF` command to amp every second on frequency change
+- Automatic frequency sync from the radio (`global.TXFreq`)  -  sends `IF` command to amp every second on frequency change
 - Show/hide dashboard panel based on amp power state (`global.ampPower`)
 - Reports operate/standby state back to the FlexRadio flow via link node
 
@@ -95,7 +95,7 @@ Monitors and controls a **Palstar LA-1K** HF linear amplifier over a serial (RS-
 
 ### Rotator
 
-Controls a **PST antenna rotator** over UDP, featuring a live azimuthal equidistant (great circle) world map rendered with D3.js — the standard ham radio projection where straight lines equal great circle paths.
+Controls a **PST antenna rotator** over UDP, featuring a live azimuthal equidistant (great circle) world map rendered with D3.js  -  the standard ham radio projection where straight lines equal great circle paths.
 
 **Key capabilities:**
 - Great circle map centered on your QTH, with an animated red beam line that updates as the rotator moves
@@ -150,14 +150,14 @@ The FlexRadio and LA-1K flows are tightly coupled. The HF Auto and Rotator flows
 │                   HF Auto Flow (ATU)                     │
 │  UDP in  :13080  ← HFAuto telemetry                      │
 │  UDP out :12020  → HFAuto commands                       │
-│  Independent — no inter-flow dependencies                │
+│  Independent  -  no inter-flow dependencies                │
 └──────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────┐
 │                     Rotator Flow                         │
 │  UDP in  :12001  ← PST azimuth status                    │
 │  UDP out :12000  → PST rotation commands                 │
-│  Independent — no inter-flow dependencies                │
+│  Independent  -  no inter-flow dependencies                │
 └──────────────────────────────────────────────────────────┘
 ```
 
@@ -181,7 +181,7 @@ Install via **Manage Palette** in the Node-RED editor:
 
 | Equipment | Connection | Address |
 |-----------|------------|---------|
-| FlexRadio SmartSDR | TCP — FlexRadio API | Same subnet (auto-discovered) |
+| FlexRadio SmartSDR | TCP  -  FlexRadio API | Same subnet (auto-discovered) |
 | HFAuto ATU | UDP loopback | 127.0.0.1:13080 in / :12020 out |
 | Palstar LA-1K | Serial RS-232 | COM port (configure in flow) |
 | PST Rotator controller | UDP loopback | 127.0.0.1:12001 in / :12000 out |

@@ -22,7 +22,7 @@ This Node-RED flow connects to a **FlexRadio SmartSDR** transceiver over the loc
 
 ## Configuring the FlexRadio Nodes for Your Radio
 
-All four core FlexRadio nodes in the flow — `flexradio-discovery`, `flexradio-message`, `flexradio-meter`, and `flexradio-request` — share a single **radio configuration node** (internal ID `08a174e0167ffe6f`). You must update this config node to point to your radio.
+All four core FlexRadio nodes in the flow  -  `flexradio-discovery`, `flexradio-message`, `flexradio-meter`, and `flexradio-request`  -  share a single **radio configuration node** (internal ID `08a174e0167ffe6f`). You must update this config node to point to your radio.
 
 ### Steps
 
@@ -71,7 +71,7 @@ The flow is organized into eight labeled groups:
 | `flexradio-message` | flexradio-message | Receives all radio message data (slices, APD, transmit, client, interlock) |
 | `flexradio-meter` | flexradio-meter | Receives real-time meter values |
 | `flexradio-request` | flexradio-request | Sends commands back to the radio (e.g., subscribe, bind, power) |
-| `Bind \| Subscribe` | function | On connect, sends 8 subscription commands: `sub client all`, `sub slice all`, `sub meter all`, `sub tx all`, `sub apd all`, `sub radio all`, `sub radio pan`, and `client bind client_id=<id>` |
+| `Bind \| Subscribe` | function | On connect, sends 8 subscription commands: `sub client all`, `sub slice all`, `sub meter all`, `sub tx all`, `sub apd all`, `sub radio all`, `sub radio pan`, and `client bind client_id=<id>`. A `flow.subscribed` guard ensures this runs only **once per connection**  -  subsequent `client` status messages (which would otherwise echo back through the switch and trigger re-subscription repeatedly) are silently ignored. The guard is reset to `false` on disconnect so reconnect always triggers a fresh subscription. |
 | `ParseClients` | function | Extracts the connected GUI client program and station name |
 | `Logged in Client Name` | ui-text | Displays the connected client name on the dashboard |
 | `Radio Relay Status` | switch | Passes commands to the radio only if `global.radioPower` is `true` (radio is on) |
@@ -157,8 +157,8 @@ All meter values are passed through **report-by-exception (RBE)** nodes before d
 
 | Amp Message Contains | Action | Hardcoded Command Sent |
 |---|---|---|
-| `AM1` (Operate mode) | Amp is active — lower exciter power | `transmit set rfpower=30` **(30 watts)** |
-| `AM2` (Standby mode) | Amp is bypassed — raise exciter power | `transmit set rfpower=90` **(90 watts)** |
+| `AM1` (Operate mode) | Amp is active  -  lower exciter power | `transmit set rfpower=30` **(30 watts)** |
+| `AM2` (Standby mode) | Amp is bypassed  -  raise exciter power | `transmit set rfpower=90` **(90 watts)** |
 
 > **These power values are hardcoded.** Edit the `Amp On Lower RF Power` and `Amp Off Raise RF Power` change nodes to match your amplifier's drive requirements.
 
@@ -185,7 +185,7 @@ The command is sent via the **"REQ Out 2"** link out node → **"RadioRequest In
 | Green (+ calibrated) | APD is **on** and calibration data exists |
 | Yellow | APD is **on** but **no calibration data** |
 
-**Dashboard button:** `APD Status` — clicking this button toggles APD on or off by sending `apd enable=1` or `apd enable=0` to the radio.
+**Dashboard button:** `APD Status`  -  clicking this button toggles APD on or off by sending `apd enable=1` or `apd enable=0` to the radio.
 
 > **Note from the flow:** *"APD seems a little buggy on my 8600 right now."*
 
@@ -193,18 +193,36 @@ The command is sent via the **"REQ Out 2"** link out node → **"RadioRequest In
 
 ### 8. Errors
 
-**Purpose:** Catches errors from FlexRadio nodes, displays a persistent error message on the dashboard, and shows a popup notification. Also includes a watchdog timer to detect when the radio link has gone silent.
+**Purpose:** Catches errors from FlexRadio nodes, displays a persistent error message on the dashboard, and detects radio disconnection via a dual-path mechanism.
 
 **Error handling:**
 - A `catch` node monitors errors from: `flexradio-discovery`, `flexradio-message`, `flexradio-meter`, `flexradio-request`, and `FlexRadio Message Out`.
-- Errors are formatted as `HH:MM:SS — SourceNode: error message` and stored in `flow.lastRadioError`.
-- Output 1 → persistent `Radio Status` text widget on dashboard.
-- Output 2 → popup notification (8-second auto-dismiss, dismissible).
+- Errors are formatted as `HH:MM:SS - SourceNode: error message` and stored in `flow.lastRadioError`.
+- The error is logged to the persistent `Radio Status` text widget on the dashboard but does not trigger any UI clearing (to avoid false disconnect events on transient errors).
 
-**Watchdog / Staleness Check:**
-- An inject node (`Watchdog Tick`) fires every **1 second**.
-- If no meter or message data has been received for more than **15 seconds**, the link is declared disconnected and a `Radio link Disconnected (Xs no data)` message is shown.
-- When data resumes, a `Radio link OK` message is emitted once on the transition.
+**Connection state detection  -  dual-path approach:**
+
+The flow uses two complementary mechanisms to detect disconnection and reconnection reliably:
+
+**Path 1  -  Connection events (fast, instant):**
+- The `flexradio-message` node emits internal `connection/tcp` status messages as the TCP socket state changes.
+- The `Activity Tap` function node intercepts these and acts immediately:
+
+| `connection/tcp` payload | Action |
+|---|---|
+| `connected` | Sets `radioLinkOK = true`, resets `subscribed` flag, sends `Radio link OK` to Radio Status, triggers `Bind \| Subscribe` |
+| `connecting` | Sends `Radio Connecting...` to Radio Status (no other action) |
+| `disconnected` | Sets `radioLinkOK = false`, resets `subscribed` flag, sends `Radio Disconnected` to Radio Status, triggers `Clear Radio Displays` |
+
+This path provides **instant** status updates when the TCP layer cleanly reports a state change (e.g., radio software restart, graceful shutdown).
+
+**Path 2  -  Staleness watchdog (fallback, ~15 seconds):**
+- Physical ethernet cable pulls do not always produce an immediate TCP socket close event  -  the OS may take 30+ seconds to declare the socket dead via keepalive timeout.
+- The `Activity Tap` function also updates a `lastRadioActivity` timestamp on every normal radio data message received.
+- A `Watchdog Tick` inject node fires every **5 seconds**.
+- `Staleness Check` evaluates the age of `lastRadioActivity`. If no data has arrived for more than **15 seconds** and `radioLinkOK` is not already `false`, it declares the link disconnected and triggers `Clear Radio Displays`.
+
+The two paths are independent  -  whichever fires first wins, and the other becomes a no-op (guarded by the `radioLinkOK` flag).
 
 ---
 
@@ -231,7 +249,7 @@ All nodes render into a single dashboard group named **`Flex Radio 8600`**. The 
 
 ---
 
-## Link Nodes — Inputs from Other Flows
+## Link Nodes  -  Inputs from Other Flows
 
 | Link In Name | Source Flow | Purpose |
 |---|---|---|
@@ -247,9 +265,9 @@ All nodes render into a single dashboard group named **`Flex Radio 8600`**. The 
 
 ---
 
-## Link Nodes — Outputs to Other Flows
+## Link Nodes  -  Outputs to Other Flows
 
-This flow does **not** send data out to other flows via link nodes. All link outs (`FlexRadio Message Out`, `Meter-out`, `REQ Out 1/2/3`, `ADP Out`) are **internal** — they only connect to link ins within the same FlexRadio tab.
+This flow does **not** send data out to other flows via link nodes. All link outs (`FlexRadio Message Out`, `Meter-out`, `REQ Out 1/2/3`, `ADP Out`) are **internal**  -  they only connect to link ins within the same FlexRadio tab.
 
 ---
 
@@ -262,7 +280,8 @@ This flow does **not** send data out to other flows via link nodes. All link out
 | `Limit Power if Amp Operate` function | `rfpower > 50` → cap at 50 W | Safety ceiling when amp is in Operate mode |
 | `Hide Radio Panel` change node | `"Flex Radio 8600"` | Dashboard group name to hide |
 | `Show Radio Panel` change node | `"Flex Radio 8600"` | Dashboard group name to show |
-| `Staleness Check` function | `15000 ms` (15 seconds) | Timeout before link is declared dead |
+| `Staleness Check` function | `15000 ms` (15 seconds) | Fallback timeout  -  link declared dead if no data received for 15 s and `connection/tcp` event did not already fire |
+| `Watchdog Tick` inject | `5` seconds | Interval at which Staleness Check is evaluated |
 | `flexradio-discovery` node | Port `4992` | FlexRadio UDP discovery port |
 | `Temp` gauge | Max `210 °F` | PA temp display range |
 | `FWD Watts` / `Watts Setting` gauges | Max `100 W` | RF power display range |
@@ -275,14 +294,14 @@ This flow does **not** send data out to other flows via link nodes. All link out
 
 The dashboard panel is automatically hidden when `global.radioPower` is `false`. This relies on the **Power Flow** tab using a Shelly relay wired to the radio's REM ON jack. If you are **not** using the Power Flow, follow these steps so the dashboard panel is always visible:
 
-### Option A — Delete the Hide/Unhide group entirely
+### Option A  -  Delete the Hide/Unhide group entirely
 
 1. In Node-RED, select all nodes inside the **Hide/Unhide Dashboard** group.
 2. Delete them.
 3. Deploy.
 4. The dashboard group `Flex Radio 8600` will remain permanently visible.
 
-### Option B — Force the dashboard to always show
+### Option B  -  Force the dashboard to always show
 
 1. Open the inject node at the top-left of the **Hide/Unhide Dashboard** group (it currently reads `global.radioPower`).
 2. Change the `topic` field from `global.radioPower` to a **static value of `true`**.
@@ -290,7 +309,7 @@ The dashboard panel is automatically hidden when `global.radioPower` is `false`.
 4. Delete the wire going to the `Hide Radio Panel` change node (or delete that node).
 5. Deploy.
 
-### Option C — Manually show the group once via inject
+### Option C  -  Manually show the group once via inject
 
 1. Add a new inject node anywhere on the canvas.
 2. Set its payload to JSON: `{"group":{"show":["Flex Radio 8600"]}}`
@@ -309,7 +328,13 @@ The dashboard panel is automatically hidden when `global.radioPower` is `false`.
 [flexradio-message]  ──► [FlexRadio Message Out] ──► [APD section]
                                                  ──► [TX/RX Messages]
                                                  ──► [Slice section]
-                                                 ──► [Error Activity Tap]
+                                                 ──► [Activity Tap]
+                                                         ├─ connection/tcp "connected"    ──► Radio Status "OK" + Bind|Subscribe
+                                                         ├─ connection/tcp "connecting"   ──► Radio Status "Connecting..."
+                                                         ├─ connection/tcp "disconnected" ──► Radio Status "Disconnected" + Clear Displays
+                                                         └─ radio data                    ──► update lastRadioActivity timestamp
+
+[Watchdog Tick]      ──► [Staleness Check] (fallback: 15 s no data ──► Radio Status + Clear Displays)
 
 [flexradio-meter]    ──► [Meter-out] ──► [Flex Meters switch]
                                               ├──► Fan RPM gauge
@@ -337,7 +362,7 @@ The dashboard panel is automatically hidden when `global.radioPower` is `false`.
 |---|---|---|
 | Radio not discovered | Not on same subnet | Ensure Node-RED host and radio share the same L2 subnet |
 | Dashboard panel not visible | `global.radioPower` is false | See [How to Disable Dashboard Auto-Hide](#how-to-disable-dashboard-auto-hide) |
-| "Radio link Disconnected" message | No meter data for 15+ seconds | Check network, radio is on, `flexradio-meter` node is configured correctly |
+| "Radio Disconnected" message | TCP disconnect detected instantly via `connection/tcp` event, or no meter/message data for 15+ seconds | Check network cable and that the radio is powered on; `flexradio-meter` and `flexradio-message` nodes must be configured with the correct radio config |
 | RF power not changing with amp | Amp flow not running or link out ID mismatch | Verify LA-1K Amp flow is deployed and link node `08f4474ef4a901ee` exists |
 | PA Supply Watts always blank | 6000-series radio | This metric requires an 8000-series radio |
-| APD button not responding | APD buggy on some firmware | Noted by the flow author — behavior may vary by firmware version |
+| APD button not responding | APD buggy on some firmware | Noted by the flow author  -  behavior may vary by firmware version |

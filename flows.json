@@ -4917,7 +4917,7 @@
         "id": "36b3091a4078fb6b",
         "type": "rbe",
         "z": "6aa99f42.c1e09",
-        "name": "",
+        "name": "Block duplicate noisey messages",
         "func": "rbe",
         "gap": "",
         "start": "",
@@ -4925,7 +4925,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 150,
+        "x": 180,
         "y": 220,
         "wires": [
             [

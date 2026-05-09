@@ -41,6 +41,11 @@
         "info": ""
     },
     {
+        "id": "a08988a32286dd69",
+        "type": "tab",
+        "label": "FlexRadio"
+    },
+    {
         "id": "8accf3dcb4959902",
         "type": "subflow",
         "name": "String Filter",
@@ -283,6 +288,238 @@
         "y": 1219,
         "w": 992,
         "h": 162
+    },
+    {
+        "id": "16dbd6bfdb4b59f6",
+        "type": "group",
+        "z": "a08988a32286dd69",
+        "name": "Automatic Pre-Distortion",
+        "style": {
+            "fill": "#bfdbef",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6415aa4b99eb136a",
+            "55b7459b88a02d8c",
+            "7e648f599417eaec",
+            "8aa065e2c59e530a",
+            "7ada0a798fc8f891",
+            "52c63e7632dcb318",
+            "7f113c3cf616ccfd",
+            "425baf0a345cf394",
+            "7f66aa7c5cabf805",
+            "0c42c0f542426882",
+            "3f652a32eb0ddb74",
+            "6b69ab25728cbe2c",
+            "7d3de6836bab706b",
+            "f3fb1d0f7dbf193c",
+            "34b8b0c9e8d2e76c",
+            "089c7cee464462fa",
+            "dfe6f6175e900689",
+            "ea75bf04a7a52089",
+            "b0347d2f732754e3",
+            "57799bbafd987bbb",
+            "f7964e13df52cc39",
+            "76921876325a560d",
+            "4ace672e99e049bb",
+            "568314c3301adc9c"
+        ],
+        "x": 14,
+        "y": 1199,
+        "w": 1163,
+        "h": 469.7777099609375
+    },
+    {
+        "id": "1242b7cfad4f7922",
+        "type": "group",
+        "z": "a08988a32286dd69",
+        "name": "Radio Connections",
+        "style": {
+            "fill": "#7f8faf",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "017932f9c1b761e6",
+            "61dbcfeea6844ba0",
+            "2bcec8a17204fdf3",
+            "4b6b5429a0f37a69",
+            "1d92ee4ef643b17b",
+            "630a34a5cbadae05",
+            "8473ab1c3f9d87f0",
+            "1dfc2a90a6334d4c",
+            "414e9ecbeaef0eb3",
+            "14ed013f2efaa047",
+            "4ceb7fab3eeb6461",
+            "f88bd05be85a1773",
+            "5bd103dc812fac52",
+            "e666ba7da0b4ca48",
+            "e714fc0a4063bd9b",
+            "4ed7c7e35be1433b",
+            "f8941cb0946eb10e",
+            "d997884d250fbd32"
+        ],
+        "x": 14,
+        "y": 719,
+        "w": 932,
+        "h": 442
+    },
+    {
+        "id": "78ad37348fcf289f",
+        "type": "group",
+        "z": "a08988a32286dd69",
+        "name": "Meters",
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "e164acda2df3a386",
+            "fa1de9659da0746b",
+            "df142221183b1405",
+            "d800e68a173d1a4d",
+            "7e804df75b66b908",
+            "8a199e35b5418e8e",
+            "b115c233ae4f6547",
+            "6117719f1ec19bc8",
+            "b9d0ace2c2efbac7",
+            "0756d38fd8f7ce84",
+            "065ca70e534879fc",
+            "2f87632c015a9343",
+            "abfdbd4f9f8060ae",
+            "639ad1c1889f757f",
+            "401b14d2b7a8e0a5",
+            "07f2c14860fafe6c",
+            "df4d397ea765801a",
+            "a0174b229d9fa1ec",
+            "78b72710d1f40228",
+            "8c535a28620f58ba",
+            "45ab87a3ceb046cb",
+            "d6f634817438f097",
+            "348519e99c58dbe3",
+            "2e5fb8a6861fa93f",
+            "f71eba28d47bcc41",
+            "bf5a8805d394098a"
+        ],
+        "x": 1114,
+        "y": 559,
+        "w": 1072,
+        "h": 522
+    },
+    {
+        "id": "3260a16cc3069ece",
+        "type": "group",
+        "z": "a08988a32286dd69",
+        "name": "Active Slice",
+        "style": {
+            "fill": "#ffff00",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "1767819f07d6f612",
+            "a72015cd9bdce6b5",
+            "3bba0f895c90fb10",
+            "55193414eb7ce821",
+            "27a1aa693b4de938",
+            "565e4e0a9eb7ce9f",
+            "9e3d2d6cb7653cbd",
+            "839ae8bc0152658f",
+            "634b5dac5a5fa866",
+            "f625e8457e04467b"
+        ],
+        "x": 1094,
+        "y": 279,
+        "w": 1052,
+        "h": 202
+    },
+    {
+        "id": "a4cde9bcbaba41b3",
+        "type": "group",
+        "z": "a08988a32286dd69",
+        "name": "Amp Integration",
+        "style": {
+            "fill": "#b797cf",
+            "label": true,
+            "color": "#001f60"
+        },
+        "nodes": [
+            "941465de770ff4a6",
+            "87541db11bc311eb",
+            "f0ab386f2dc5aea7",
+            "cfbf73db3feabbd3",
+            "38e1e5bf1dcad1b4",
+            "01f0ad8660f2a236"
+        ],
+        "x": 1124,
+        "y": 19,
+        "w": 642,
+        "h": 182
+    },
+    {
+        "id": "ba29ca5cbda84230",
+        "type": "group",
+        "z": "a08988a32286dd69",
+        "name": "Radio Message Outputs",
+        "style": {
+            "fill": "#bfdbef",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "cf4b015e9576c4ca",
+            "5f16301308a9c532",
+            "db89df48c7863886",
+            "1ceea62dd48c2081",
+            "0bd49678be52e86f",
+            "71d77a9ad9aae964",
+            "83bb04ad5a8fb6d7",
+            "7ae62a1ab8dc2de0",
+            "6a132a850cfd5cc6",
+            "3d968b3c1439a2a2",
+            "4e68483e82b8bb32",
+            "e207bdc5c2b68e70",
+            "9275a87d9d94f420",
+            "e1e1516783d4db36",
+            "fb84401037f34e6f",
+            "5791f6d84d717353",
+            "1a7d6b34c2e4e2f5",
+            "2dd32316e986f4b7"
+        ],
+        "x": 14,
+        "y": 299,
+        "w": 972,
+        "h": 322
+    },
+    {
+        "id": "a02f7d632e06cf7d",
+        "type": "group",
+        "z": "a08988a32286dd69",
+        "name": "Errors",
+        "style": {
+            "fill": "#ff3f3f",
+            "label": true
+        },
+        "nodes": [
+            "36879dbd52583596",
+            "d1617575c95768cb",
+            "a5e7ab09f5a90441",
+            "d342ed167dbd5eaf",
+            "a7dd1d07d2782322",
+            "7ade1449f1491f50",
+            "bb52092e3fa23389",
+            "48a6a80c27a087af",
+            "cc01dd02ee03ff01",
+            "e0e1d3323e274eba",
+            "b133b66872f15c2a",
+            "6f8d5ae09b373a1a"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 1012,
+        "h": 222
     },
     {
         "id": "a09de02de2c95c9c",
@@ -5426,245 +5663,6 @@
         ]
     },
     {
-        "type": "tab",
-        "label": "FlexRadio",
-        "id": "a08988a32286dd69"
-    },
-    {
-        "id": "16dbd6bfdb4b59f6",
-        "type": "group",
-        "z": "a08988a32286dd69",
-        "name": "Automatic Pre-Distortion",
-        "style": {
-            "fill": "#bfdbef",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6415aa4b99eb136a",
-            "55b7459b88a02d8c",
-            "7e648f599417eaec",
-            "8aa065e2c59e530a",
-            "7ada0a798fc8f891",
-            "52c63e7632dcb318",
-            "7f113c3cf616ccfd",
-            "425baf0a345cf394",
-            "7f66aa7c5cabf805",
-            "0c42c0f542426882",
-            "3f652a32eb0ddb74",
-            "6b69ab25728cbe2c",
-            "7d3de6836bab706b",
-            "f3fb1d0f7dbf193c",
-            "34b8b0c9e8d2e76c",
-            "089c7cee464462fa",
-            "dfe6f6175e900689",
-            "ea75bf04a7a52089",
-            "b0347d2f732754e3",
-            "57799bbafd987bbb",
-            "f7964e13df52cc39",
-            "76921876325a560d",
-            "4ace672e99e049bb",
-            "568314c3301adc9c"
-        ],
-        "x": 14,
-        "y": 1199,
-        "w": 1163,
-        "h": 469.7777099609375
-    },
-    {
-        "id": "1242b7cfad4f7922",
-        "type": "group",
-        "z": "a08988a32286dd69",
-        "name": "Radio Connections",
-        "style": {
-            "fill": "#7f8faf",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "017932f9c1b761e6",
-            "61dbcfeea6844ba0",
-            "2bcec8a17204fdf3",
-            "4b6b5429a0f37a69",
-            "1d92ee4ef643b17b",
-            "630a34a5cbadae05",
-            "8473ab1c3f9d87f0",
-            "1dfc2a90a6334d4c",
-            "414e9ecbeaef0eb3",
-            "14ed013f2efaa047",
-            "4ceb7fab3eeb6461",
-            "f88bd05be85a1773",
-            "5bd103dc812fac52",
-            "e666ba7da0b4ca48",
-            "e714fc0a4063bd9b",
-            "4ed7c7e35be1433b",
-            "f8941cb0946eb10e",
-            "d997884d250fbd32"
-        ],
-        "x": 14,
-        "y": 719,
-        "w": 932,
-        "h": 442
-    },
-    {
-        "id": "78ad37348fcf289f",
-        "type": "group",
-        "z": "a08988a32286dd69",
-        "name": "Meters",
-        "style": {
-            "fill": "#e3f3d3",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "e164acda2df3a386",
-            "fa1de9659da0746b",
-            "df142221183b1405",
-            "d800e68a173d1a4d",
-            "7e804df75b66b908",
-            "8a199e35b5418e8e",
-            "b115c233ae4f6547",
-            "6117719f1ec19bc8",
-            "b9d0ace2c2efbac7",
-            "0756d38fd8f7ce84",
-            "065ca70e534879fc",
-            "2f87632c015a9343",
-            "abfdbd4f9f8060ae",
-            "639ad1c1889f757f",
-            "401b14d2b7a8e0a5",
-            "07f2c14860fafe6c",
-            "df4d397ea765801a",
-            "a0174b229d9fa1ec",
-            "78b72710d1f40228",
-            "8c535a28620f58ba",
-            "45ab87a3ceb046cb",
-            "d6f634817438f097",
-            "348519e99c58dbe3",
-            "2e5fb8a6861fa93f",
-            "f71eba28d47bcc41",
-            "bf5a8805d394098a"
-        ],
-        "x": 1114,
-        "y": 559,
-        "w": 1072,
-        "h": 522
-    },
-    {
-        "id": "3260a16cc3069ece",
-        "type": "group",
-        "z": "a08988a32286dd69",
-        "name": "Active Slice",
-        "style": {
-            "fill": "#ffff00",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "1767819f07d6f612",
-            "a72015cd9bdce6b5",
-            "3bba0f895c90fb10",
-            "55193414eb7ce821",
-            "27a1aa693b4de938",
-            "565e4e0a9eb7ce9f",
-            "9e3d2d6cb7653cbd",
-            "839ae8bc0152658f",
-            "634b5dac5a5fa866",
-            "f625e8457e04467b"
-        ],
-        "x": 1094,
-        "y": 279,
-        "w": 1052,
-        "h": 202
-    },
-    {
-        "id": "a4cde9bcbaba41b3",
-        "type": "group",
-        "z": "a08988a32286dd69",
-        "name": "Amp Integration",
-        "style": {
-            "fill": "#b797cf",
-            "label": true,
-            "color": "#001f60"
-        },
-        "nodes": [
-            "941465de770ff4a6",
-            "87541db11bc311eb",
-            "f0ab386f2dc5aea7",
-            "cfbf73db3feabbd3",
-            "38e1e5bf1dcad1b4",
-            "01f0ad8660f2a236"
-        ],
-        "x": 1124,
-        "y": 19,
-        "w": 642,
-        "h": 182
-    },
-    {
-        "id": "ba29ca5cbda84230",
-        "type": "group",
-        "z": "a08988a32286dd69",
-        "name": "Radio Message Outputs",
-        "style": {
-            "fill": "#bfdbef",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "cf4b015e9576c4ca",
-            "5f16301308a9c532",
-            "db89df48c7863886",
-            "1ceea62dd48c2081",
-            "0bd49678be52e86f",
-            "71d77a9ad9aae964",
-            "83bb04ad5a8fb6d7",
-            "7ae62a1ab8dc2de0",
-            "6a132a850cfd5cc6",
-            "3d968b3c1439a2a2",
-            "4e68483e82b8bb32",
-            "e207bdc5c2b68e70",
-            "9275a87d9d94f420",
-            "e1e1516783d4db36",
-            "fb84401037f34e6f",
-            "5791f6d84d717353",
-            "1a7d6b34c2e4e2f5",
-            "2dd32316e986f4b7",
-            "49b00646c1624088",
-            "143fee2dd05ea00f"
-        ],
-        "x": 14,
-        "y": 299,
-        "w": 1012,
-        "h": 342
-    },
-    {
-        "id": "a02f7d632e06cf7d",
-        "type": "group",
-        "z": "a08988a32286dd69",
-        "name": "Errors",
-        "style": {
-            "fill": "#ff3f3f",
-            "label": true
-        },
-        "nodes": [
-            "36879dbd52583596",
-            "d1617575c95768cb",
-            "a5e7ab09f5a90441",
-            "d342ed167dbd5eaf",
-            "a7dd1d07d2782322",
-            "7ade1449f1491f50",
-            "bb52092e3fa23389",
-            "48a6a80c27a087af",
-            "cc01dd02ee03ff01",
-            "e0e1d3323e274eba",
-            "b133b66872f15c2a",
-            "6f8d5ae09b373a1a"
-        ],
-        "x": 14,
-        "y": 39,
-        "w": 1012,
-        "h": 222
-    },
-    {
         "id": "cf4b015e9576c4ca",
         "type": "switch",
         "z": "a08988a32286dd69",
@@ -5809,8 +5807,7 @@
         "y": 580,
         "wires": [
             [
-                "7ae62a1ab8dc2de0",
-                "49b00646c1624088"
+                "7ae62a1ab8dc2de0"
             ]
         ]
     },
@@ -6181,7 +6178,8 @@
             "7ade1449f1491f50"
         ],
         "x": 285,
-        "y": 960
+        "y": 960,
+        "wires": []
     },
     {
         "id": "83bb04ad5a8fb6d7",
@@ -6687,7 +6685,8 @@
             "414e9ecbeaef0eb3"
         ],
         "x": 825,
-        "y": 580
+        "y": 580,
+        "wires": []
     },
     {
         "id": "14ed013f2efaa047",
@@ -6876,7 +6875,8 @@
             "414e9ecbeaef0eb3"
         ],
         "x": 1105,
-        "y": 1340
+        "y": 1340,
+        "wires": []
     },
     {
         "id": "34b8b0c9e8d2e76c",
@@ -7088,7 +7088,8 @@
             "a7dd1d07d2782322"
         ],
         "x": 285,
-        "y": 1040
+        "y": 1040,
+        "wires": []
     },
     {
         "id": "b115c233ae4f6547",
@@ -8022,7 +8023,7 @@
         "z": "a08988a32286dd69",
         "g": "1242b7cfad4f7922",
         "name": "D-RequestStatus",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8171,8 +8172,7 @@
         "y": 580,
         "wires": [
             [
-                "0bd49678be52e86f",
-                "143fee2dd05ea00f"
+                "0bd49678be52e86f"
             ]
         ]
     },
@@ -8205,7 +8205,8 @@
             "414e9ecbeaef0eb3"
         ],
         "x": 1725,
-        "y": 120
+        "y": 120,
+        "wires": []
     },
     {
         "id": "e1e1516783d4db36",
@@ -8239,7 +8240,8 @@
             "414e9ecbeaef0eb3"
         ],
         "x": 785,
-        "y": 380
+        "y": 380,
+        "wires": []
     },
     {
         "id": "f8941cb0946eb10e",
@@ -8651,7 +8653,8 @@
             "348519e99c58dbe3"
         ],
         "x": 945,
-        "y": 180
+        "y": 180,
+        "wires": []
     },
     {
         "id": "1a7d6b34c2e4e2f5",
@@ -8736,7 +8739,8 @@
             "2e5fb8a6861fa93f"
         ],
         "x": 985,
-        "y": 200
+        "y": 200,
+        "wires": []
     },
     {
         "id": "2dd32316e986f4b7",
@@ -8819,7 +8823,8 @@
             "f625e8457e04467b"
         ],
         "x": 945,
-        "y": 220
+        "y": 220,
+        "wires": []
     },
     {
         "id": "f625e8457e04467b",
@@ -8837,39 +8842,5 @@
                 "839ae8bc0152658f"
             ]
         ]
-    },
-    {
-        "id": "49b00646c1624088",
-        "type": "debug",
-        "z": "a08988a32286dd69",
-        "g": "ba29ca5cbda84230",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 920,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "143fee2dd05ea00f",
-        "type": "debug",
-        "z": "a08988a32286dd69",
-        "g": "ba29ca5cbda84230",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
-        "y": 600,
-        "wires": []
     }
 ]
